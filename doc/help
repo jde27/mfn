@@ -1,0 +1,83 @@
+The sourcefiles are written in a slightly confusing mix of TeX and HTML.
+This is (paradoxically) to make life easier for both the code and for the user.
+As time goes on, it should become more TeX-like, in particular:
+
+* tables and lists are currently just coded as HTML.
+
+* hyperlinks are coded using <a> tags
+
+It would be nice to find a TeXier way of doing this.
+
+########### STRUCTURE OF SOURCEFILES
+
+\documentclass{amsart}  ### Lines like this are redundant, but I left them in
+                        ### because at some point I want to be able to compile
+                        ### these files as actual LaTeX.
+
+\title{Title}           ### This is necessary metadata for the XML
+\author{Author 1}       ### So is this
+\email{Email 1}         ### This is optional
+\author{Author 2}       ### but if you have several authors
+\author{Author 3}       ### and miss out one of their email addresses
+\email{Email 3}         ### then the order will mess up
+
+### Anything else like \usepackage{...} or \tryingtobeclever{intheheader}
+### is completely redundant - texml will simply ignore it
+
+%@interestinglink.xml   ### Use this syntax for linking to related XML files.
+%@another-interestinglink.xml
+
+%#Tagged                ### MFN uses a tagging system to sort information.
+%#LieGroups             ### If you want to tag a fieldnote as something to do
+                        ### with Lie groups, use the tag %#LieGroups.
+                        ### The % is there to hide this from TeX if it were ever
+                        ### compiled (and the %# syntax alerts texml to the presence
+                        ### of this tag).
+
+\begin{document}        ### This is a key line which tells texml to start processing
+                        ### the document proper (rather than the metadata).
+
+\section{Section name}
+
+You can type maths like this $\pi r^2$ or like this
+\[G_{\mu\nu}=8\pi T_{\mu\nu}\]
+
+\begin{Lemma}
+    You can use environments and call them whatever you want.
+\end{Lemma}
+\begin{proof}
+    Proofs are hidden and expand on demand.
+\end{proof}
+
+\begin{Giraffe}
+    Really whatever you want.
+\end{Giraffe}
+
+\section{New section}
+
+\begin{Example}[labelgoeshere]  ### You can use labels so that you can refer
+    Example                     ### back to stuff using <a> tags
+\end{Example}
+
+Here is a <a link="lagrangian-phase.xml" lid="phasedfn"/> to a 
+specific label (phasedfn) on another page (lagrangian-phase.xml). This will show as 
+the precise number of the labelled object (e.g. Definition 1.2).
+
+Here is a <a link="lagrangian-grassmannian.xml">link</a> to another page.
+
+<table>
+<tr><td>Tables work as in HTML</td></tr>
+</table>
+
+So do:
+<ul>
+<li>Lists</li>
+<li>(Ordered or unordered)</li>
+<li>but don't forget to close your li tags or else XML will have a fit</li>
+</ul>
+
+\begin{Theorem}
+    There you have it. That's almost it.
+\end{Theorem}
+
+\end{document}          ### Yes, you need this to inform texml that you're done.
