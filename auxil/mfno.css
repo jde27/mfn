@@ -1,0 +1,148 @@
+/* Global options */
+
+body{
+   font-family:"Arial", "Helvetica", sans-serif;
+}
+
+/* header/footer styles */
+
+.card{
+   font-size:130%;
+   font-weight:bold;
+   background-color:#006666;
+   color:#FFFFFF;
+   padding:5pt;
+}
+
+.cardname{
+    float:left;
+}
+
+.mfn{
+    float:right;
+}
+
+.clear-box{
+    clear:both;
+}
+
+.content{
+    float:left;
+    width:80%;
+    padding:5pt;
+}
+
+.sidebar{
+    float:right;
+    width:15%;
+    border-left:solid 1px black;
+    border-bottom:solid 1px black;
+    padding:1%;
+}
+
+.contentbox{
+    padding:5pt;
+}
+
+.bod-div{
+    padding:5pt;
+    margin-top:15pt;
+}
+
+.authors{
+    font-size:80%;
+    background-color:#EEEEEE;
+    border-top:solid black 1px;
+}
+
+.foot{
+   font-weight:bold;
+   background-color:#006666;
+   color:#FFFFFF;
+   padding:5pt;
+}
+
+
+/* Section headings */
+
+.section{
+    font-size:110%;
+    font-weight:bold;
+}
+
+.section-div{
+}
+
+
+/* Lemmata etc */
+
+.env{
+    font-weight:bold;
+}
+
+.prf{
+    font-style:italic;
+    display:block;
+}
+
+.ans{
+    font-style:italic;
+    display:block;
+}
+
+/* div for Lemmata etc */
+
+.env-div{
+    margin:10pt;
+    padding-left:8px;
+    border-left:solid 4px black;
+}
+
+.prf-div{
+    padding:2pt;
+}
+
+.exp-div{
+    padding:2pt;
+}
+
+.ans-div{
+    padding:2pt;
+}
+
+/* Recreating HTML */
+
+.em{
+    font-style:italic;
+}
+
+.bf{
+    font-weight:bold;
+}
+
+table{
+    border:1px solid black;
+    padding:3px;
+    border-collapse:collapse;
+}
+
+th{
+    text-align:center;
+    padding:3px;
+    border:1px solid black;
+    background-color:#dddddd;
+}
+
+td{
+    text-align:center;
+    padding:3px;
+    border:1px solid black;
+}
+
+tr{
+    border:1px solid black;
+}
+
+li{
+    margin:10px;  
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+
+<card title="Dyson series" created="2016-11-19" date="2016-12-11" type="tex">
+<metadata>
+<authors>
+<author name="Jonny Evans" email="j.d.evans@ucl.ac.uk"/>
+</authors>
+<links>
+</links>
+<tags>
+<tag name="LieGroups"/>
+<tag name="QuantumFieldTheory"/>
+</tags>
+</metadata>
+<bod>
+<section num="1" name="Time-ordered exponential">
+
+<env type="Definition" id="section1item1" sectionnum="1" itemnum="1">
+<p>
+Let $V(t)$ be a path of bounded linear operators (e.g. finite-dimensional matrices). The <i> time-ordered exponential</i> (or <i> Dyson series</i>) of $V(t)$ is the series
+\[\mathcal{T}\exp\left(\int_0^tV(s)ds\right):=1+\int_0^tdt_1V(t_1)+\int_0^tdt_1\int_0^{t_1}dt_2V(t_1)V(t_2)+\cdots.\]
+</p>
+</env>
+
+<p>
+This is called the time-ordered exponential because we can think of it as being obtained from the usual exponential
+\[1+\int_0^tV(s_1)ds_1+\frac{1}{2!}\int_0^tds_1\int_0^tds_2V(s_1)V(s_2)+\cdots+\int_0^tds_1\cdots\int_0^tds_kV(s_1)\cdots V(s_k)+\cdots\]
+by splitting the domain of integration for the $k$th term, $[0,t]^k$, into $k!$ open pieces where the $s_i$ are distinct and reordering the factors $V(s_1)\cdots V(s_k)$ to $V(t_1)\cdots V(t_k)$ where $t_1\lt t_2\lt \cdots\lt t_k$ is a permutation of $s_1,\ldots,s_k$. This results in $k!$ copies of the integral
+\[\int_0^tdt_1\int_0^{t_1}dt_2\cdots\int_0^{t_{k-1}}dt_kV(t_1)\cdots V(t_k).\]
+</p>
+
+<env type="Theorem" id="section1item2" sectionnum="1" itemnum="2">
+<p>
+Assuming $V(t)$ is bounded, the Dyson series converges absolutely and uniformly to a family of operators $U(t)=\mathcal{T}\exp\left(\int_0^tV(s)ds\right)$ (the same is true for the sequence of partial sums of $t$-derivatives). Moreover, $U(t)$ solves the ordinary differential equation
+\[\frac{d}{dt}U(t)=V(t)U(t).\]
+</p>
+</env>
+<proof vis="off" id="prf1item2">
+<p>
+To get absolute convergence, consider the norm
+\[\|\int_0^tdt_1\cdots\int_0^{t_{k-1}}dt_kV(t_1)\cdots V(t_k)\|.\]
+This is bounded above by
+\[\int_0^tdt_1\cdots\int_0^{t_{k-1}}dt_k\|V(t_1)\|\cdots\|V(t_k)\|\]
+which is, in turn bounded above by
+\[\frac{1}{k!}\int_0^tdt_1\cdots\int_0^t dt_k\|V(t_1)\|\cdots\|V(t_k)\|.\]
+This series sums to $\exp\left(\int_0^tV(s)ds\right)$ which converges, proving that the original series converges absolutely. [Proof of uniform convergence omitted for now.]
+</p>
+
+<p>
+Since it converges uniformly along with its $t$-derivatives, we can differentiate term by term. Using the fundamental theorem of calculus, we get
+\[\frac{d}{dt}U(t)=V(t)+\int_0^tdt_2V(t)V(t_2)+\int_0^tdt_2\int_0^{t_2}dt_3V(t)V(t_2)V(t_3)+\cdots\]
+and this is just $V(t)U(t)$.
+</p>
+</proof>
+
+<p>
+Note: When the Dyson series appears in quantum mechanics/quantum field theory, the operators involved are unbounded and so the series does not converge in general (it's only something like an asymptotic expansion).
+</p>
+
+</section></bod>
+</card>

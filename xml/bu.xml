@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+
+<card title="$BU(n)$" created="2016-03-09" date="2016-12-11" type="tex">
+<metadata>
+<authors>
+<author name="Jonny Evans" email="j.d.evans@ucl.ac.uk"/>
+</authors>
+<links>
+<link href="classifying-spaces.xml"/>
+<link href="chern-classes.xml"/>
+<link href="characteristic-classes.xml"/>
+<link href="grassmannians.xml"/>
+</links>
+<tags>
+<tag name="TopologyOfLieGroups"/>
+<tag name="Bundles"/>
+</tags>
+</metadata>
+<bod>
+<section num="1" name="Definitions and examples">
+
+<p>
+The space $BU(n)$ is the direct limit of Grassmannians $\lim_{N\to\infty}\mathrm{Gr}(n,N)$. It is the <a link="classifying-spaces.xml" lid="dfn2">classifying space</a> for complex vector bundles of rank $n$. Equivalently, $BU(n)=EU(n)/U(n)$ where $EU(n)$ is a contractible free $U(n)$-space (such an $EU(n)$ is called the universal principal $U(n)$-bundle).
+</p>
+
+<env type="Example" id="exm1" sectionnum="1" itemnum="1">
+<p>
+Consider the case $n=1$. There is a free $U(1)$ action on $S^{2N-1}\subset\CC^N$ for each $N$: $(z_1,\ldots,z_N)\mapsto(e^{i\theta}z_1,\ldots,e^{i\theta}z_N)$, $\sum_{i=1}^N|z_i|^2=1$. Define $EU(1):=S^{\infty}:=\lim_{N\to\infty}S^{2N-1}$; this still has a free $U(1)$-action, but it is also contractible.
+</p>
+</env>
+<proof vis="off" id="prf1item1">
+<p>
+To see this, observe that the $k$th homotopy group of $S^{\infty}$ is the limit of $\pi_k(S^{2N-1})=0$, so the inclusion of a point into $S^{\infty}$ is a weak homotopy equivalence, and since $S^{\infty}$ has the homotopy type of a connected, countable CW-complex, <a link="https://en.wikipedia.org/wiki/Whitehead_theorem">Whitehead's theorem</a> tells us that this is actually a homotopy equivalence.
+</p>
+
+<p>
+Alternatively, one can construct a nullhomotopy explicitly. This is done in Hatcher's book.
+</p>
+</proof>
+
+<p>
+Therefore $BU(1)=\lim_{N\to\infty}S^{2N-1}/U(1)=\lim_{N\to\infty}\CC\mathbf{P}^N$ is the direct limit of <a link="cpn.xml">complex projective spaces</a>.
+</p>
+
+<p>
+We can use this to compute its homotopy and cohomology groups...TBC
+</p>
+
+</section>
+<section num="2" name="Characteristic classes">
+
+<env type="Definition" id="section2item1" sectionnum="2" itemnum="1">
+<p>
+A characteristic class for rank $k$ complex vector bundles is a cohomology class of $BU(k)$. If $E\to X$ is a rank $k$ complex vector bundle over a compact Hausdorff space $X$ then let $f\colon X\to BU(k)$ be the (unique up to homotopy) classifying map for $E$. For each cohomology class $c\in H^*(BU(k))$, define the corresponding characteristic class of $E$ to be $f^*c\in H^*(X)$.
+</p>
+</env>
+
+<env type="Example" id="section2item2" sectionnum="2" itemnum="2">
+<p>
+We have $H^*(BU(k);\ZZ)=\ZZ[c_1,c_2,\ldots,c_k]$ for some generators $c_i\in H^{2i}(BU(k);\ZZ)$. The characteristic class corresponding to $c_i$ is called the $i$th Chern class.
+</p>
+</env>
+
+</section></bod>
+</card>

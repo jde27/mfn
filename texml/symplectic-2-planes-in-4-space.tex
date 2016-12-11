@@ -1,0 +1,44 @@
+\document{article}
+
+\title{Symplectic 2-planes in 4-space}
+\author{Jonny Evans}
+
+%#SymplecticLinearAlgebra
+
+\begin{document}
+
+\section{2-planes}
+
+Let $\OP{Gr}(2,4)$ denote the Grassmannian of oriented real 2-planes in $\RR^4$ (with coordinates $x_1,y_1,x_2,y_2$), let $\omega=dx_1\wedge dy_1+dx_2\wedge dy_2$ be the standard symplectic form and let $I$ be the standard complex structure coming from the complex coordinate system $z_k=x_k+iy_k$.
+
+\begin{Lemma}
+  The Grassmannian is diffeomorphic to $S^2\times S^2$. The subset of $I$-complex planes can be identified with $S^2\times\{N\}$ (where $N$ is the north pole); the subset of $I$-anticomplex planes (i.e. complex planes equipped with the opposite orientation) can be identified with $S^2\times\{S\}$ (where $S$ is the south pole) and the subset of $\omega$-Lagrangian planes can be identified with $S^2\times S^1$ where $S^1$ is the equator. Projection to the equator gives the <a link="lagrangian-phase.xml">Lagrangian phase</a> with respect to the holomorphic volume form $dz_1\wedge dz_2$.
+\end{Lemma}
+\begin{proof}
+  To come...
+\end{proof}
+
+The symplectic group $\OP{Sp}(4,\RR)$ (of linear maps preserving $\omega$) acts on $\OP{Gr}(2,4)$ with two orbits: the symplectic 2-planes and the Lagrangian 2-planes.
+
+\section{Transverse pairs of symplectic 2-planes}
+
+The action of $\OP{Sp}(4,\RR)$ on symplectic 2-planes is not, however, 2-transitive. Let $\pi_1$ and $\pi_2$ be a pair of symplectic 2-planes which intersect transversely. Let $\pi_1^{\omega}$ be the symplectic orthogonal complement to $\pi_1$. Transversality $\pi_1\pitchfork\pi_2$ means precisely that $\pi_2$ projects isomorphically to $\pi_1^{\omega}$, so that $\pi_2$ can be written as a graph over $\pi_1^{\omega}$:
+\[\pi_2=\OP{graph}(A):=\{(Av,v)\in\pi_1\oplus\pi_1^{\omega}\ :\ v\in\pi_1^{\omega}\}\]
+for some 2-by-2 matrix $A$. Note that the pullback of $\omega$ to $\pi_2$ is $(1+\det(A))\OP{vol}$ (where $\OP{vol}$ is the standard volume form on $\RR^2$, so that $\pi_2$ is symplectic if and only if $\det(A)>-1$.
+
+To study the action of $\OP{Sp}(4,\RR)$ on pairs of planes, we will look at the action of the stabiliser of $\pi_1$ on $\pi_2$. Certainly, if a matrix in $\OP{Sp}(4,\RR)$ is in the stabiliser of $\pi_1$ then it also preserves $\pi_1^{\omega}$, hence it has the block-diagonal form $\OP{diag}(P,Q)$ where $P,Q\in\OP{Sp}(2,\RR)$. Under the action of such a matrix, $\pi_2$ is sent to $\OP{graph}(PAQ^{-1})$. Note that $\det(A)=\det(PAQ^{-1})$ since $P,Q\in\OP{Sp}(2,\RR)$, so the determinant of $A$ is an $\OP{Sp}(4,\RR)$-invariant quantity associated to a pair of 2-planes $\pi_1,\pi_2$.
+
+\begin{Definition}
+  Let $\Delta(\pi_1,\pi_2)=\det(A)$ where $\pi_2=\OP{graph}(A)$.
+\end{Definition}
+
+\section{Making two 2-planes simultaneously holomorphic}
+
+\begin{Lemma}
+  Given two symplectic 2-planes $\pi_1,\pi_2$ in $\RR^4$, there exists an $\omega$-compatible almost complex structure $J$ such that $J\pi_k=\pi_k$, $k=1,2$, if and only if $\Delta(\pi_1,\pi_2)>0$ or $\pi_2=\pi_1^{\omega}$.
+\end{Lemma}
+\begin{proof}
+  If a compatible almost complex structure preserves $\pi_1$ then it also preserves $\pi_1^{\omega}$, hence $J$ must be block-diagonal $\OP{diag}(J_1,J_2)$ for some complex structures $J_1$ and $J_2$ on $\pi_1$ and $\pi_1^{\omega}$. If $\pi_2=\OP{graph}(A)$ is also $J$-complex then either $A=0$ or else $\det(A)\neq 0$ - if $\det(A)=0$ and $A\neq 0$ then $\pi_1^{\omega}$ and $\pi_2$ intersect precisely along a real line, so cannot be simultaneously $J$-complex (otherwise their intersection would contain a complex line). If $A=0$ then $\pi_2=\pi_1^{\omega}$. If $\det(A)\neq 0$ then the fact that $\OP{graph}(A)$ is $J$-complex means that $A$ is a $J_1,J_2$-complex map, i.e. $AJ_2=J_1A$. Thus $J_1=AJ_2A^{-1}$. We can pick $J_2$ arbitrarily and ask: when is $AJ_2A^{-1}$ compatible with the symplectic structure on $\pi_1^{\omega}$? Equivalently, if $\Omega$ is the restriction of $\omega$ to $\pi_1^{\omega}$, when is $J_2$ compatible with $A^*\Omega$? Since $\Omega$ is a 2-form on a 2-dimensional vector space and $A$ is a linear map, $A^*\Omega=\det(A)\Omega$. Therefore $J_2$ is compatible with $A^*\Omega$ if and only if $\det(A)>0$ (otherwise it defines the opposite orientation).
+\end{proof}
+
+\end{document}

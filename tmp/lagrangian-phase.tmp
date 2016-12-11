@@ -1,0 +1,76 @@
+This is a temporary file.
+\documentclass{article}
+
+\title{Phase function for Lagrangians}
+\author{Jonny Evans}
+\email{j.d.evans@ucl.ac.uk}
+
+%@lagrangian-submanifold.xml
+%@calabi-yau.xml
+%@special-lagrangian.xml
+%@lagrangian-grassmannian.xml
+%@maslov-class.xml
+
+%#Lagrangians
+  
+\begin{document}
+
+\section{Complex volume form}
+  
+\begin{Definition}
+  A complex volume form on an almost complex manifold $(X,J)$ is a section of the canonical bundle $\Lambda^n_{\CC}T^*X$, i.e. you consider $T^*X$ as a complex vector bundle and take the top complex exterior power (we will also work, more generally, with sections of $\left(\Lambda^n_{\CC}T^*X\right)^{\otimes 2}$).
+\end{Definition}
+
+\begin{Example}
+  In the simplest case, suppose that $X$ is a K&#038;#228;hler $2n$-manifold admitting a global holomorphic volume form $\Omega$, that is, a section of $\Lambda_{\CC}^nT^*X$. In local coordinates, that means $\Omega=f(z_1,\ldots,z_n)dz_1\wedge\cdots\wedge dz_n$ for some nowhere-vanishing holomorphic function $f$. If there is a global holomorphic volume form, we say that $X$ is a <a link="calabi-yau.xml">Calabi-Yau manifold</a>.
+\end{Example}
+
+\begin{Lemma}
+  Complex volume forms (respectively sections of $\left(\Lambda^n_{\CC}T^*X\right)^{\otimes 2}$) exist if and only if $c_1(X)=0$ (respectively $2c_1(X)=0$). This happens if and only if the line bundle $\Lambda^n_{\CC}T^*X$ (respectively $\left(\Lambda^n_{\CC}T^*X\right)^{\otimes 2}$) is trivial. Here $c_1$ is the <a link="chern-class.xml">first Chern class</a>.
+\end{Lemma}
+\begin{proof}
+  A complex line bundle is trivial if and only if it admits a global section. This is an exercise in obstruction theory. We try to construct a section of/trivialisation of a complex line bundle $E$ cell-by-cell over $X$. Over 1-cells it's always possible as any complex line bundle over the circle is trivial. Having trivialised over the 1-skeleton, we trivialise the line bundle over each 2-cell and compare the two trivialisations that arise over the boundary of the 2-cell. These differ by an integer winding number (trivialisations of the trivial bundle over $S^1$ are in bijection with homotopy classes of maps $S^1\to S^1$) so we get a cellular cochain sending each 2-cell to the corresponding integer. This cochain is closed and represents (by definition) the first Chern class of $E$. If the cochain is also exact then we can modify the trivialisation over the 1-skeleton to make all of these winding numbers zero (by definition of the cellular coboundary map) and hence the section can be extended over the 2-cells by making it constant with respect to the trivialisation over each 2-cell. The higher Chern classes would measure the obstruction to extending the section over the higher-dimensional cells, but $c_k(E)=0$ for $k&#038;gt;1$ and $E$ a complex line bundle.
+\end{proof}
+
+\begin{Remark}
+When $c_1(X)\neq 0$, we may have to make do with a meromorphic volume form (e.g. the Fano situation, when $\Lambda^n_{\CC}TX$ is ample) or a holomorphic $n$-form which vanishes along a subvariety (e.g. the general type situation, when $\Lambda^n_{\CC}T^*X$ is ample). In these case, we can just restrict attention to the complement of the divisor where $\Omega$ has poles/zeros.
+\end{Remark}
+
+\section{Phase function for Lagrangians}
+
+Suppose that $\iota\colon L\looparrowright X$ is a Lagrangian immersion. Since $\iota^*TX\cong TL\otimes\CC$ we have $\iota^*\Lambda^n_{\CC}T^*X\cong (\Lambda^nT^*L)\otimes\CC$ and we can think of $\iota^*\Omega$ as a complex-valued volume form on $L$. If $\sigma$ is a choice of local volume form on $L$ then $\iota^*\Omega=\lambda\sigma$ for some complex function $C\colon L\to\CC^{\times}$. Since $\sigma$ is defined up to scaling by $\lambda\in\RR^{\times}$, the quantity $[C]\in\CC^{\times}/\RR^{\times}$ is independent of $\sigma$. Note that $\CC^{\times}/\RR^{\times}\cong\RR/\pi\ZZ$, by sending $[re^{i\theta}]$ to $\theta\in\RR/\pi\ZZ$.
+
+\begin{Definition}[phasefunction]
+We define the phase function of $L$ to be $\theta\colon L\to\RR/\pi\ZZ$ where at each point $x\in L$ there is a real volume element $\sigma\in\Lambda^nT_x^*L$ such that $\Omega(\iota(x))=e^{i\theta(x)}\sigma$.
+\end{Definition}
+
+\begin{Remark}
+  There is an alternative way to say this, which makes sense whenever we have a section $\mho$ of $\left(\Lambda^n_{\CC}T^*X\right)^{\otimes 2}$.
+\end{Remark}
+
+\begin{Claim}[squarevolumeform]
+  Any manifold $L$ has a canonical (up-to-scale) section $\tau$ of $\left(\Lambda^nT^*L\right)^{\otimes 2}$
+\end{Claim}
+\begin{proof}
+  Here, $\tau$ is constructed as follows. Pick an orientation on the oriented cover $\tilde{L}\to L$; we can think of this as a 2-valued volume form on $L$. At every point we consider the tensor product of these two volume elements as a section of $\left(\Lambda^nT^*L\right)^{\otimes 2}$. The only ambiguity was in the choice of orientation on $\tilde{L}$, which amounts to a change of sign on the two branches of the volume form. Since they both change by the same sign, this cancels out when we take the tensor product.
+\end{proof}
+
+We take $e^{i2\theta}$ to be the argument of $C$ where $\iota^*\mho=C\tau$.
+
+\section{Real-valued phase and grading}
+
+\begin{Definition}[maslovclass]
+  We have $\RR/\pi\ZZ\cong S^1$. Let $\alpha\in H^1(S^1;\ZZ)$ denote a generator for such that $\int_{S^1}\alpha=1$, where $S^1$ is oriented in the direction of increasing $\RR$. If $L$ is a Lagrangian with phase function $\theta\colon L\to\RR/\pi\ZZ$ then $\theta^*\alpha$ is called the {\em Maslov class} $\mu\in H^1(L;\ZZ)$ of $L$.
+\end{Definition}
+
+If $\mu=0$ then $\theta$ lifts to a function $L\to\RR$. There are $\ZZ$ such lifts, differing by addition of a multiple of $\pi$.
+
+\begin{Definition}[gradedlag]
+  A choice of lift $\tilde{\theta}\colon L\to\RR$ of the phase function is called a {\em grading} of $L$. The pair $(L,\tilde{\theta})$ is called a {\em graded Lagrangian}.
+\end{Definition}
+
+\begin{Definition}[speciallagrangian]
+  A special case of $\mu=0$ is when $\theta$ is constant. In this case we say that $L$ is a <a link="special-lagrangian.xml">special Lagrangian</a> with phase $\theta$.
+\end{Definition}
+
+\end{document}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/css" href="../auxil/rss.css"?>
+<rss version="2.0">
+
+<channel>
+<title>Mathematical Field Notes</title>
+  <link>http://www.homepages.ucl.ac.uk/~ucahjde/mfn/</link>
+  <description>Hypertext index cards containing notes on mathematics</description>
+  <item>
+    <title>Graded Lagrangian graphs</title>
+    <link>graded-lagrangian-graphs.xml</link>
+    <pubDate>2016-12-11</pubDate>
+  </item>
+  <item>
+    <title>Flux</title>
+    <link>flux.xml</link>
+    <pubDate>2016-12-11</pubDate>
+  </item>
+  <item>
+    <title>Dyson series</title>
+    <link>dyson-series.xml</link>
+    <pubDate>2016-12-11</pubDate>
+  </item>
+  <item>
+    <title>Classifying spaces for complex vector bundles</title>
+    <link>classifying-spaces.xml</link>
+    <pubDate>2016-12-11</pubDate>
+  </item>
+  <item>
+    <title>Chern classes for hypersurfaces in $\CC P^n$</title>
+    <link>chern-comp-hypersurface.xml</link>
+    <pubDate>2016-12-11</pubDate>
+  </item>
+  <item>
+    <title>Chekanov torus</title>
+    <link>chekanov-torus.xml</link>
+    <pubDate>2016-12-11</pubDate>
+  </item>
+  <item>
+    <title>$BU(n)$</title>
+    <link>bu.xml</link>
+    <pubDate>2016-12-11</pubDate>
+  </item>
+  <item>
+    <title>Projective toric varieties</title>
+    <link>toric.xml</link>
+    <pubDate>2016-12-11</pubDate>
+  </item>
+  <item>
+    <title>The action functional</title>
+    <link>action-functional.xml~</link>
+    <pubDate>2016-12-11</pubDate>
+  </item>
+  <item>
+    <title>Symplectomorphism group of quadric surface</title>
+    <link>symp-quadric.xml</link>
+    <pubDate>2016-12-11</pubDate>
+  </item>
+</channel>
+</rss>

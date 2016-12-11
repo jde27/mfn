@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+<card title="WorkedExample" date="2016-12-11" type="tag">
+<!-- This page collects links to all field notes tagged WorkedExample -->
+<bod>
+<index>
+<item href="chern-comp-hypersurface.xml">Chern classes for hypersurfaces in $\CC P^n$</item>
+<item href="index.xml">Index</item>
+</index>
+</bod>
+</card>

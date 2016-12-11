@@ -1,0 +1,114 @@
+\documentclass{article}
+
+\title{Maslov class}
+\author{Jonny Evans}
+
+%#Lagrangians
+
+%@lagrangian-phase.xml
+%@lagrangian-submanifold.xml
+%@lagrangian-grassmannian.xml
+
+\begin{document}
+
+\section{The Maslov class}
+
+\begin{Definition}
+  Let $(X,\omega)$ be a symplectic manifold and $L\subset X$ a Lagrangian submanifold. The Maslov class is the element $\mu_L\in\left(H_2(X,L;\ZZ)\right)^*$ defined as follows:
+  <ul>
+  <li>Given a class $\alpha\in H_2(X,L;\ZZ)$, find a continuous map from a compact 2-dimensional surface with boundary $u\colon(\Sigma,\partial\Sigma)\to (X,L)$ representing the class $\alpha$.</li>
+  <li>The group $\OP{Sp}(2n,\RR)$ is connected, so its <a href="classifying-spaces.xml">classifying space</a> is simply-connected; since $\Sigma$ retracts onto its 1-skeleton, the classifying map $\Sigma\to B\OP{Sp}(2n;\RR)$ for the symplectic vector bundle $u^*TX$ is nullhomotopic, so that $u^*TX$ is trivial. Pick a trivialisation.</li>
+  <li>The tangent spaces $u^*TL$ give a Lagrangian subbundle of $u^*TX$ around $\partial\Sigma$ and in the chosen trivialisation we can write this subbundle as $M(s)\RR^n$, $s\in\partial\Sigma$, for some loop $M(s)\in U(n)$.</li>
+  <li>Now define $\mu_L(\alpha)$ to be the winding number of $s\mapsto\det(M(s))^2$, considered as a map $\partial\Sigma\to U(1)$.</li>
+  </ul>
+\end{Definition}
+
+\begin{Remark}
+  If $\Omega=dz_1\wedge\cdots\wedge dz_n$ then for a unitary matrix $M\in U(n)$ we have $\Omega|_{M\RR^n}=\det(M)\OP{vol}$ where $\OP{vol}$ is the standard volume form on $\RR^n$. This is the relationship of the definition above with <a link="lagrangian-phase.xml" lid="maslovclass"/>.
+\end{Remark}
+
+\begin{Lemma}
+  The definition of $\mu_L(\alpha)$ is independent of the trivialisation which is picked in the second step.
+\end{Lemma}
+\begin{proof}
+  Two trivialisations of an $\OP{Sp}(2n,\RR)$-bundle over $\Sigma$ differ by a map $\Sigma\to\OP{Sp}(2n,\RR)$. Since $\Sigma$ retracts onto its 1-skeleton, this is completely determined (up to homotopy) by a map $T\colon\pi_1(\Sigma)\to\pi_1(\OP{Sp}(2n,\RR))=\ZZ$. How does such a change of trivialisation affect the trivialisation around $\partial\Sigma$? Since $\partial\Sigma$ is nullhomologous in $\Sigma$, it represents the zero element in $H_1(\Sigma;\ZZ)$. By Hurewicz's theorem, $H_1(\Sigma;\ZZ)$ is the abelianisation of $\pi_1(\Sigma)$, so the homotopy class of the loop $\partial\Sigma$ is a commutator in $\pi_1(\Sigma)$. Since $\pi_1(\OP{Sp}(2n,\ZZ))\cong\ZZ$ is abelian, the image under $T$ of a commutator in $\pi_1(\Sigma)$ is zero. Therefore the trivialisations agree around $\partial\Sigma$. Since $\mu_L(\alpha)$ only depends on the trivialisation around $\partial\Sigma$, this proves the Lemma.
+\end{proof}
+
+\section{Examples}
+
+\begin{Example}
+  Consider the unit circle $L\subset\CC$. Looking at the long exact sequence of the pair $(\CC,L)$, we have $H_2(\CC,L;\ZZ)\cong H_1(L;\ZZ)\cong\ZZ$. The generator of this relative homology group can be represented by the unit disc. We see that this has $\mu_L(\alpha)=2$: the "blackboard" trivialisation is the relevant one, and with respect to this trivialisation the tangent line of $L$ winds twice around the Lagrangian Grassmannian (i.e. it becomes vertical precisely twice).
+\end{Example}
+
+\begin{Example}
+  Again, let $L\subset\CC$ be the unit circle. We have $H_2(\CC^2,L^2;\ZZ)=\ZZ^2$. The two discs $\alpha_1=D^2\times\{0\}$ and $\alpha_2=\{0\}\times D^2$ have $\mu_L(\alpha_i)=2$. To see this, note that the only difference between this and the previous example is the addition of an extra factor in $TL$ which is constant with respect to the trivialisation. This does not change the Maslov number.
+\end{Example}
+
+\begin{Remark}[rmkdoublecover]
+  There is a double cover $\tilde{\Lambda}(n)\to\Lambda(n)$ of the Lagrangian Grassmannian by the Grassmannian of oriented Lagrangian planes; this cover corresponds to the inclusion of $2\ZZ\subset\ZZ\in\pi_1(\Lambda(n))$. This means that the Maslov number of a loop of oriented Lagrangian planes is even.
+\end{Remark}
+
+\begin{Remark}[rmk2c1]
+  If two surfaces $\Sigma_1$ and $\Sigma_2$ in $X$ have the same boundary (sitting on $L$) and representing classes $\alpha_1$ and $\alpha_2$, then their union is a closed surface $\Sigma$ representing $\alpha=\alpha_1+\alpha_2\in H_2(X;\ZZ)\subset H_2(X,L;\ZZ)$. The pullback of $TX$ to $\Sigma$ is obtained from the trivial bundle over the $\Sigma_i$ using a <a href="clutching-construction.xml">clutching map</a>. The clutching map is a map $\partial\Sigma_1\to\OP{Sp}(2n,\RR)$ and, by definition of the first Chern class, $c_1(TX|_\Sigma)$ is the winding number of this clutching map in $\pi_1(\OP{Sp}(2n,\RR))$. The action map $\OP{Sp}(2n,\RR)\to\Lambda(n)$ induces the map $z\mapsto 2z$ on the level of $\pi_1$. The sum of the Maslov numbers $\mu_L(\alpha_1)+\mu_L(\alpha_2)$ (thought of as the difference of the Maslov numbers $\mu_L(\alpha_1)-\mu_L(-\alpha_2)$) is equal to the winding number of the clutching map composed with the action map. Therefore we deduce that $\mu_L(\alpha_1)=\mu_L(\alpha_2)+2c_1(\alpha)$. The same trick works if $\Sigma_1$ and $\Sigma_2$ satisfy the condition that their boundaries are homologous in $L$ (you can cap off their union with a piece of isotropic surface contained in $L$).
+\end{Remark}
+
+\begin{Example}
+  Consider a surface $S\subset X$ which intersects $L$ at a point $x\in S$. We can think of $S$ as a surface $\Sigma_1$ with boundary $\partial\Sigma_1$ such that the whole boundary maps to $x$. Now take $\Sigma_2$ to be the "constant surface" at the point $x$. By <a lid="rmk2c1"/>, using the fact that $\mu_L([\Sigma_2])=0$, we get that
+  \[\mu_L([\Sigma_1])=2c_1(X)[S].\]
+\end{Example}
+
+\begin{Example}[exmrpn]
+  Consider the Lagrangian $L=\mathbf{RP}^n\subset\mathbf{CP}^n=X$. We have $H_2(X,L;\ZZ)=\ZZ$. The following disc class $\alpha$ generates this group. Let $C$ be a complex line (copy of $\mathbf{CP}^1$) in $\mathbf{CP}^n$ preserved setwise by complex conjugation $c$. Then $C\cap L$ is a separating loop in $\mathbf{CP}^1$. The two halves $C_1$ and $C_2$ of $C$ now give two discs with boundary on $L$, both representing $\alpha$. We also know, by <a lid="rmk2c1"/>, that $2\mu_L(\alpha)=\mu_L([C_1])+\mu_L([C_2])=2c_1(C)=2(n+1)$ (for the computation of $c_1(\mathbf{CP}^n)$ see <a link="chern-comp-hypersurface.xml" lid="corcherncp"/>). This implies $\mu_L(\alpha)=n+1$.
+\end{Example}
+
+\section{Anticanonical divisors}
+
+One point of view on this which I find helpful I learned from Auroux's paper "Mirror symmetry is T-duality in the complement of an anticanonical divisor". Over a field, say $\mathbf{Q}$, we have $H_2(X,L;\mathbf{Q})^*\cong H^2(X,L;\mathbf{Q})\cong H_{2n-2}(X\setminus L;\mathbf{Q})$ (using (a) universal coefficients and (b) Poincare-Lefschetz duality) so we might as well think of the Maslov class as a cohomology class in $H^2(X,L;\mathbf{Q})$ and its Poincare dual as a codimension 2 cycle. More precisely, if we represent this $H_{2n-2}(X\setminus L;\mathbf{Q})$ with a pseudocycle $D$ disjoint from $L$ then $\mu_L(\alpha)$ is just the intersection number of $D$ with a surface representing $\alpha$. I like to call this a {\em Maslov divisor}.
+
+If your Lagrangian is orientable then $\mu_L$ is divisible by 2 (by <a lid="rmkdoublecover"/>) and you can instead try to find a divisor $D$ Poincare dual to $\mu_L$. I like to call this a {\em half-Maslov divisor}.
+
+\begin{Remark}
+  Under the natural map $H_{2n-2}(X\setminus L)\to H_{2n-2}(X)$ given by inclusion a Maslov divisor maps to a pseudocycle Poincare dual to $2c_1(X)$; a half-Maslov divisor maps to a pseudocycle Poincare dual to $c_1(X)$, e.g. an anticanonical divisor.
+\end{Remark}
+
+
+\begin{Example}
+Consider the quadric $Q=\{x_0^2+\cdots+x_n^2=0\}\subset\mathbf{CP}^n$. This has empty real part and is therefore disjoint from $\mathbf{RP}^n$. A complex line $C$ as in <a lid="exmrpn"/> intersects $Q$ in two points transversely (or, in the nongeneric situation, one point with multiplicity 2). The divisor $(n+1)Q$ therefore represents $\mu_L$ in $H_{2n-2}(\mathbf{CP}^n,\mathbf{RP}^n)$. If $n$ is odd then $n+1$ is divisible by 2, $\mathbf{RP}^n$ is orientable, and we find a half-Maslov divisor $\left(\frac{n+1}{2}\right)Q$.
+\end{Example}
+
+\begin{Lemma}
+Let $X$ be a Fano variety. Suppose that $D$ is an anticanonical divisor in
+$X$ cut out by a section $\sigma\in\Gamma(K^*_X)$, i.e. $D=\sigma^{-1}(0)$.
+Let $\Omega=1/\sigma$ be the corresponding holomorphic volume form with
+poles along $D$. If $L$ is special Lagrangian for $\Omega$ then $D$ is a
+half-Maslov divisor.
+\end{Lemma}
+\begin{proof}
+Take a class $\alpha\in H_2(X,L;\ZZ)$ and let
+$u\colon(\Sigma,\partial\Sigma)\to (X,L)$ be a surface with boundary on $L$
+representing $\alpha$. Pick a trivialisation $\xi$ of $u^*TX$; since
+$K_X=\det(T^*X)$, this gives rise to trivialisations $\det\xi^*$ and
+$\det\xi$ of $u^*K_X$ and $u^*K_X^*$. In this trivialisation, we have,
+for each $s\in\partial\Sigma$,
+\[T_{u(s)}L=M(s)\RR^n,\]
+\[\Omega_{u(s)}=r(s)e^{i\theta(s)}dz_1\wedge\cdots\wedge dz_n\]
+\[\sigma_{u(s)}=r(s)^{-1}e^{-i\theta(s)}\partial_{z_1}\wedge\cdots\wedge\partial_{z_n}\]
+where $M(s)\in U(n)$ is a loop of unitary matrices. Recall that
+$\Omega_{u(s)}(T_{u(s)}L)=r(s)e^{i\theta(s)}\det(M(s))\OP{vol}$ where
+$\OP{vol}$ is the standard volume form on $\RR^n$. Since $L$ is special
+Lagrangian for $\Omega$, this tells us that $\det(M(s))=ce^{-i\theta(s)}$
+for some constant $c\in U(1)$.
+
+To compute the intersection number $\Sigma\cdot D$ we need to count the
+number of zeros of the section $\sigma\circ u$ of the pullback bundle
+$u^*K^*_X$ with multiplicity. This equals the winding number of
+$u^*\sigma/|u^*\sigma|\colon\partial\Sigma\to U(1)$ in the trivialisation
+$\det\xi$ (we need a trivialisation to make sense of $u^*\sigma$ as a
+complex number rather than just a point in the fibre of a line bundle). We
+have $\sigma_{u(s)}/|\sigma_{u(s)}|=e^{-i\theta(s)}=\det M(s)c$. By
+definition, the Maslov index $\mu_L(\alpha)$ is the winding number of
+$\det(M(s))^2$, which is therefore twice the intersection number
+$\Sigma\cdot D$.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+
+<card title="Hamiltonian paths and flux" created="2016-04-09" date="2016-12-11" type="tex">
+<metadata>
+<authors>
+<author name="Jonny Evans" email="nomail"/>
+</authors>
+<links>
+<link href="flux.xml"/>
+<link href="symplectic-connection.xml"/>
+</links>
+<tags>
+<tag name="Flux"/>
+</tags>
+</metadata>
+<bod>
+<section num="1" name="Hamiltonian paths and flux">
+
+<env type="Lemma" id="lmafluxham" sectionnum="1" itemnum="1">
+<p>
+Let $\psi=\{\psi_t\}_{t=0}^T$ be a path of symplectomorphisms with $\psi_0=\mathrm{id}$. Then $\psi_t$ is Hamiltonian for all $t\in[0,T]$ if and only if $\mathfrak{flux}(\psi)_0^s=0$ for all $s\in[0,T]$.
+</p>
+</env>
+<proof vis="off" id="prf1item1">
+<p>
+We have
+\[\frac{d}{ds}\mathfrak{flux}(\psi)_0^s=[\iota_{X_s}\omega]\]
+which vanishes for all $s$ if and only if $\iota_{X_s}\omega=-dH_s$ for all $s$.
+</p>
+</proof>
+
+<env type="Proposition" id="thmfluxham" sectionnum="1" itemnum="2">
+<p>
+If $\psi=\{\psi_t\}_{t=0}^1$ is a path of symplectomorphisms with $\mathfrak{flux}(\psi)_0^1=0$ then $\psi$ is homotopic (rel endpoints) to a path of Hamiltonian symplectomorphisms.
+</p>
+</env>
+<proof vis="off" id="prf1item2">
+<p>
+By <a lid="lmafluxham"/> it suffices to homotope $\psi$ to kill off all of its flux. Pick a basis $e_1,\ldots,e_n$ for $H^1(X;\RR)$ and, for each basis vector $e_i$, pick a symplectic vector field $Y_i$ such that $[\iota_{Y_i}\omega]=e_i$. Let $\phi_i^t$ denote the Hamiltonian flow of $Y_i$ for time $t$. Let us write
+\[\mathfrak{flux}(\psi)_0^t=\sum f_i(t)e_i\]
+and set $\theta^s_t=\phi_1^{sf_1(t)}\circ\cdots\circ\phi_n^{sf_n(t)}\circ\psi_t$. This defines a family of symplectic isotopies $\theta^s=\{\theta^s_t\}_{t=0}^1$ with $\theta^0=\psi$, $\theta^s_0=\mathrm{id}$ and $\theta^s_1=\psi_1$ for all $s$ (since $f_i(1)=0$ for all $i$ by assumption). Moreover $\theta^s$ has flux equal to
+\[\mathfrak{flux}(\theta^s)_0^t=\mathfrak{flux}(\psi)_0^t-s\sum\mathfrak{flux}(\phi_i)_0^t=\sum_{i=1}^n(f_i(t)-sf_i(t))e_i,\]
+so $\mathfrak{flux}(\theta^1)_0^t=0$ for all $t$ and $\theta^1$ is a Hamiltonian isotopy.
+</p>
+</proof>
+
+</section></bod>
+</card>

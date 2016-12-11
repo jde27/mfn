@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+
+<card title="Homotopy groups of $U(n)$" created="2016-03-09" date="2016-12-11" type="tex">
+<metadata>
+<authors>
+<author name="Jonny Evans" email="j.d.evans@ucl.ac.uk"/>
+</authors>
+<links>
+<link href="bu.xml"/>
+<link href="classifying-spaces.xml"/>
+</links>
+<tags>
+<tag name="TopologyOfLieGroups"/>
+</tags>
+</metadata>
+<bod>
+<section num="1" name="$SU(n)$ vs $U(n)$">
+
+<p>
+Note that the related group $SU(n)$ of special unitary transformations arises as the kernel of the determinant map
+\[\det\colon U(n)\to U(1)\]
+and the homotopy long exact sequence of this fibration (and the fact that $U(1)$ is a circle, so has nontrivial homotopy only in degree 1) means that $\pi_k(SU(n))\cong\pi_k(U(n))$ as long as $k\neq 1$.
+</p>
+
+</section>
+<section num="2" name="Stable range">
+
+<p>
+The homotopy long exact sequence of the fibration $U(n)\to U(n+1)\to S^{2n+1}$ gives
+\[0=\pi_{2n}(S^{2n+1})\to\pi_{2n-1}(U(n))\to\pi_{2n-1}(U(n+1))\to \pi_{2n-1}(S^{2n+1})=0\]
+so if $k\leq 2n-1$ then $\pi_k(U(n))\cong \pi_k(U(N))$ for all $N\geq n$. Equivalently, if we define $U=\lim U(n)$ then
+\[\pi_k(U(n)) = \pi_k(U)\mbox{ for }k \leq 2n-1\]
+We call this the <b> stable range</b>.
+</p>
+
+<p>
+Bott periodicity implies that the homotopy groups are 2-periodic in the stable range, and are given by:
+</p>
+
+<p>
+<table>
+<tr><th>$k \mod 2$</th> <th>$\pi_k(U)$ </th></tr>
+<tr><td>$0$ </td> <td>$0$ </td></tr>
+<tr><td>$1$ </td> <td>$\ZZ$ </td></tr>
+</table>
+</p>
+
+</section>
+<section num="3" name="Unstable range">
+
+<p>
+Beyond the stable range, results of Bott and Kervaire [Ker] imply:
+</p>
+
+<p>
+<table>
+<tr><th>$n\mod 2$ </th> <th>$0$ </th> <th>$1$ </th></tr>
+<tr><td>$\pi_{2n}(U(n))$ </td> <td>$\Z{n!}$ </td> <td>$\Z{n!}$ </td></tr>
+<tr><td>$\pi_{2n+1}(U(n))$</td> <td>$\Z{2}$ </td> <td>$0$ </td></tr>
+<tr><td>$\pi_{2n+2}(U(n))$</td> <td>$\begin{cases}\Z{12}&#038;amp;\mbox{ if }n/2=1 \\ \Z{2}\oplus\Z{(n+1)!}&#038;amp;\mbox{ if }n/2&#038;gt;1\end{cases}$</td> <td>$\Z{(n+1)!/2}$</td></tr>
+</table>
+</p>
+
+</section>
+<section num="4" name="References">
+
+<p>
+<b> [Ker]</b> Kervaire, M. A. "Some nonstable homotopy groups of Lie groups" Illinois J. Math. 4 (1960) 161-169.
+</p>
+
+</section></bod>
+</card>

@@ -1,0 +1,55 @@
+\documentclass{article}
+
+\title{Symplectomorphism group of quadric surface}
+\author{Jonny Evans}
+\email{j.d.evans@ucl.ac.uk}
+
+\begin{document}
+
+\section{Holomorphic foliations}
+
+\begin{Theorem}
+  Let $X=S^2\times S^2$, equipped with the monotone symplectic form $\omega=\omega_{S^2}\oplus\omega_{S^2}$. Let $J$ be an $\omega$-compatible almost complex structure. There exist two foliations $\mathcal{F}_\alpha$ and $\mathcal{F}_\beta$ of $X$, whose leaves are $J$-holomorphic spheres in the homology classes $\alpha=[S^2\times\{0\}]$ and $\beta=[\{0\}\times S^2]$ respectively. These foliations have the property that a leaf of the $\alpha$-foliation and a leaf of the $\beta$-foliation intersect transversely at one point.
+\end{Theorem}
+
+\begin{Lemma}[lmadiffeo]
+  Given an $\omega$-compatible almost complex structure $J$ on $X$ and parametrisations $u\colon S^2\to X$, $v\colon S^2\to X$ of the unique $\alpha$- and $\beta$-curves through $(0,0)$, there is a unique diffeomorphism $\phi\colon X\to X$ such that $\phi(z,0)=u(z)$, $\phi(0,w)=v(w)$ and $\phi$ sends $J_0$-holomorphic foliations by $\alpha$- (respectively $\beta$-) curves to $J$-holomorphic foliations by $\alpha$- (respectively $\beta$-) curves.
+\end{Lemma}
+\begin{proof}
+  Let us write $\alpha_w$ for the unique $\alpha$-curve through $v(w)$ and $\beta_z$ for the unique $\beta$-curve through $u(z)$. The required diffeomorphism is defined as follows: the unique point where $\alpha_w$ and $\beta_z$ intersect is sent to $(z,w)$. It is easy to check that this satisfies the conclusions of the Lemma.
+\end{proof}
+
+\section{The symplectomorphism group is connected}
+
+\begin{Theorem}[thmgromovquadric]
+  Let $X=S^2\times S^2$ equipped with the monotone symplectic form $\omega=\omega_{S^2}\oplus\omega_{S^2}$. The group
+  \[G=\{\phi\colon X\to X\ :\ \phi^*\omega=\omega,\ \phi_*\colon H_*(X)\to H_*(X)\mbox{ trivial}\}\]
+  of symplectomorphisms of $S^2\times S^2$ acting trivially on homology is connected. (In fact, a more careful version of the argument below, using the fact that the space of compatible almost complex structures is contractible, implies that it is homotopy equivalent to its subgroup $SO(3)\times SO(3)$).
+\end{Theorem}
+
+\begin{proof}
+  Take $\psi\in G$. Since the space of $\omega$-compatible almost complex structures is connected, we can find a path $J_t$ of $\omega$-compatible almost complex structures with $J_0=j\times j$ (the standard product complex structure) and $J_1=\psi_*J_0=\psi^*\circ J_0\circ(\psi^{-1})^*$. Assume without loss of generality that $\psi(0,0)=(0,0)$ (possible since $G$ acts transitively on points of $X$). Let $u_0(z)=(z,0)$ and $v_0(w)=(0,w)$. Take the $J_1$-holomorphic parametrisations $u_1(z)=\psi(u_0(z))$, $v_1(w)=\psi(v_0(w))$ of the $J_1$-holomorphic $\alpha$- and $\beta$-curves through $(0,0)$. As $t$ varies, there is a continuous family of $\alpha$-curves through $(0,0)$ and we pick a continuous family of parametrisation $u_t$ interpolating between $u_0$ and $u_1$ (this is possible because the set of parametrisations is connected); we do the same for $v_t$ interpolating between $v_0$ and $v_1$. Let $\phi_t$ be the diffeomorphism given by <a lid="lmadiffeo"/>; note that $\psi=\phi_1$ by construction.
+
+  We need to modify $\phi_t$ (rel endpoints) until it becomes a path in $G$. We accomplish this by a Moser-type trick. Let $\omega_{s,t}=(1-s)\omega+s\phi_t^*\omega$.
+
+  \begin{Lemma}
+    The 2-form $\omega_{s,t}$ is symplectic for all $(s,t)\in[0,1]^2$.
+  \end{Lemma}
+  \begin{proof}
+    We need to check nondegeneracy:
+    \[\omega_{s,t}\wedge\omega_{s,t}=(1-s)^2\omega\wedge\omega+s^2\phi_t^*\omega\wedge\phi_t^*\omega+2s(1-s)\omega\wedge\phi_t^*\omega.\]
+    If we evaluate this on a basis $e_1\wedge e_2\wedge e_3\wedge e_4$ of $T_{(x,y)}X$ we want to get a positive number. Since $\omega$ and $\phi_t^*\omega$ are symplectic, the first two terms will give a positive contribution and we only need to check that the final term gives a positive contribution (ignoring the overall positive factor of $2s(1-s)$):
+    \[C=\sum_{i,j,k,\ell}\epsilon_{ijk\ell}\omega(e_i,e_j)\omega((\phi_t)_*e_k,(\phi_t)_*e_\ell).\]
+    Fix a point $(x,y)$ and let $e_1,e_2$ be a symplectic basis for $T_xS^2\times\{0\}$ and $e_3,e_4$ be a symplectic basis for $\{0\}\times T_yS^2$. Since these subspaces are $\omega$-orthogonal, the only possibilities for $\omega(e_i,e_j)\neq 0$ are (up to ordering) $\omega(e_1,e_2)$ and $\omega(e_3,e_4)$. Since $\phi_t$ sends $J_0$-holomorphic foliations to $J_t$-holomorphic foliations, we have $\phi_t^*\omega(e_1,e_2)=\omega((\phi_t)_*e_1,(\phi_t)_*e_2)>0$ and similarly for $e_3,e_4$. Therefore the contribution $C$ is
+    \[\omega(e_1,e_2)\omega((\phi_t)_*e_3,(\phi_t)_*e_4)+\omega(e_3,e_4)\omega((\phi_t)_*e_1,(\phi_t)_*e_2)>0.\]
+  \end{proof}
+  
+  Observe that $\frac{d}{ds}\omega_{s,t}=d\sigma_{s,t}$ since the action of $\psi$ on cohomology is trivial. We let $v_{s,t}$ be the vector field such that $\iota_{v_{s,t}}\omega_{s,t}=-\sigma_{s,t}$ (possible since $\omega_{s,t}$ is symplectic). Note that $v_{s,0}=v_{s,1}=0$ for all $s$. If we define the family of diffeomorphisms $\theta_{s,t}$ to be the diffeomorphisms solving
+  \[\frac{d}{ds}\theta_{s,t}(x)=v_{s,t}(\theta_{s,t}(x)),\qquad\theta_{0,t}=\mathrm{id}\]
+  then we have $\theta_{s,0}=\theta_{s,1}=\mathrm{id}$ for all $s$, and
+  \[\frac{d}{ds}\theta_{s,t}^*\omega_{s,t}=\theta_{s,t}^*d\iota_{v_{s,t}}\omega_{s,t}-\theta_{s,t}^*\sigma_{s,t}=0\]
+  so that $\theta_{s,t}^*\omega_{s,t}=\omega_{0,t}=\omega$ (this is Moser's trick). Therefore $\phi_t\circ\theta_{t,1}=\psi_t$ is a path of symplectomorphisms connecting the identity to $\psi$.
+\end{proof}
+
+
+\end{document}

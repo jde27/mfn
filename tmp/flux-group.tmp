@@ -1,0 +1,27 @@
+This is a temporary file.
+\documentclass{article}
+
+\title{Flux group}
+\author{Jonny Evans}
+
+%#Flux
+
+%@flux.xml
+%@hamiltonian-paths-and-flux.xml
+
+\begin{document}
+
+Let $(X,\omega)$ be a symplectic manifold and let $\mathrm{Symp}_0(X,\omega)$ be the connected component of the identity in its symplectomorphism group. The universal cover $\widetilde{\mathrm{Symp}}_0(X,\omega)$ can be constructed as the space of all homotopy classes (rel endpoints) of paths based at the identity, ending anywhere (the covering map sends a homotopy class of paths to its endpoint).
+
+\begin{Definition}
+  The {\em flux homomorphism} $\mathfrak{flux}\colon\widetilde{\mathrm{Symp}}_0(X,\omega)\to H^1(X;\RR)$ is the map which sends a homotopy class of paths $\psi=\{\psi_t\}_{t=0}^1$ to its <a link="flux.xml">flux</a> $\mathfrak{flux}(\psi)_0^1\in H^1(X;\RR)$.
+\end{Definition}
+
+The preimage of the identity under the cover $\widetilde{\mathrm{Symp}}_0(X,\omega)\to\mathrm{Symp}(X,\omega)$ is $\pi_1(\mathrm{Symp}(X,\omega),1)$. The {\em flux group} $\Gamma_\omega\subset H^1(X;\RR)$ is $\mathfrak{flux}(\pi_1(\mathrm{Symp}(X,\omega)))$.
+
+\begin{Remark}
+  By <a link="flux.xml" lid="rmkperflux"/>, $\Gamma_\omega\subset H^1(X;\OP{Per}(\omega))$. For generic symplectic forms, $\OP{Per}(\omega)$ is dense in $\RR$ (a small perturbation of $\omega$ is still symplectic and the periods can be made linearly independent over $\QQ$). Nonetheless, $\Gamma_\omega$ is a discrete group! This was a conjecture for a long time, but was eventually proved by Ono \cite{Ono}.
+
+\end{Remark}
+
+\end{document}

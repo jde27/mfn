@@ -1,0 +1,94 @@
+This is a temporary file.
+\documentclass{article}
+
+\title{Lagrangian submanifolds}
+\author{Jonny Evans}
+
+%#Lagrangians
+
+%@chekanov-torus.xml
+%@lagrangian-phase.xml
+%@graded-lagrangian-graphs.xml
+
+\begin{document}
+
+\section{Lagrangian immersions}
+
+\begin{Definition}
+  Let $(X,\omega)$ be a symplectic manifold. An immersion $\iota\colon L\looparrowright X$ is called
+  <ul>
+  <li>isotropic if $\iota(T_xL)\subset\iota(T_xL)^{\omega}$ for all $x\in L$; in this case $2\dim(L)\leq\dim(X)$.</li>
+  <li>coisotropic if $\iota(T_xL)^{\omega}\subset\iota(T_xL)$ for all $x\in L$; in this case $2\dim(L)\geq\dim(X)$.</li>
+  <li>Lagrangian if $\iota(T_xL)=\iota(T_xL)^{\omega}$ for all $x\in L$; in this case $2\dim(L)=\dim(X)$.</li>
+  </ul>
+  Here, $V^{\omega}$ denotes the symplectic orthogonal complement of a subspace $V\subset T_xX$:
+  \[V^{\omega}:=\{w\in T_xX\ :\ \omega(v,w)=0\mbox{ for all }v\in V\}.\]
+\end{Definition}
+
+\begin{Remark}
+  If $J$ is an $\omega$-compatible almost complex structure and $g$ the associated almost Kahler metric then the Lagrangian condition is equivalent to $TL^{\perp}=JTL$ (where $\perp$ denotes the $g$-orthogonal complement).
+\end{Remark}
+
+\begin{Example}
+  If $X$ is a 2-dimensional surface then any immersion of a collection of 1-dimensional loops is Lagrangian. For example, the unit circle in $\CC$ is a Lagrangian submanifold. One can construct more examples by taking products $L_1\times L_2\subset X_1\times X_2$.
+\end{Example}
+
+\begin{Example}
+  If $X=T^*M$ is the <a link="cotangent-bundle.xml">cotangent bundle of a manifold $M$, equipped with its canonical symplectic form</a> $\omega_{\mathrm{can}}$, then, for any immersed submanifold $N\subset M$, the conormal bundle
+  \[\nu^*N=\{\eta\in T_x^*M\ :\ \eta(v)=0\mbox{ for all }v\in T_xN\}\]
+  is an immersed Lagrangian in $T^*M$. In particular:
+  <ul>
+  <li>if $N=M$ then $\nu^*N$ is the zero-section,</li>
+  <li>if $N=\{x\}\subset M$ then $\nu^*N$ is the cotangent fibre $T_x^*M$.</li>
+  </ul>
+\end{Example}
+
+\section{Weinstein neighbourhoods}
+
+\begin{Lemma}
+  The normal bundle of $L\subset X$ is isomorphic to $T^*L$.
+\end{Lemma}
+\begin{proof}
+  Given a vector $v\in T_xX$, define $\eta_v\in T_x^*L$ by $\eta(w)=\omega(v,w)$. The kernel of the map $F\colon T_xX\to T_x^*L$, $F(v)=\eta_v$, is $T_xL$. By nondegeneracy, $F$ is surjective, so we deduce that $T_x^*L$ is isomorphic to the fibre $\nu_xL=T_xX/T_xL$ of the normal bundle to $L$ at $x$.
+\end{proof}
+
+\begin{Theorem}[weinsteinnbhd]
+  If $\iota\colon L\looparrowright X$ is a compact Lagrangian immersion then there exists a neighbourhood $W$ of $L$ inside $T^*L$ and a symplectic immersion $I\colon W\looparrowright X$ such that $I|_L=\iota$. Such a neighbourhood is called a {\em Weinstein neighbourhood} of $L$ and is canonical, up to homotopy, given $\iota$.
+\end{Theorem}
+\begin{proof}
+  Pick an almost complex structure on $X$ and let $g$ be the associated almost Kahler metric, giving a well-defined exponential map $\exp\colon T^*L\to X$ (as the normal bundle of $L$ in $X$ is isomorphic to $T^*L$) which is an immersion. Consider the pull-back form $\exp^*\omega$.
+
+  \begin{Claim}
+    The 2-forms $\exp^*\omega$ and $\omega_{\mathrm{can}}$ agree along $L$.
+  \end{Claim}
+  \begin{proof}
+    In local coordinates, $d_{(x,0)}\exp\colon T^*_xL\to X$ is given by
+    \[d_{(x,0)}(v,\eta)=v+J\eta^{\sharp}\]
+    where $\eta^{\sharp}$ is the vector in $T_xL$ which is $g$-dual to $\eta\in T^*_xL$. Therefore
+    \[\begin{align*}
+      (\exp^*\omega)((v_1,\eta_1),(v_2,\eta_2))&#038;=\omega(v_1+J\eta_1^{\sharp},v_2+J\eta_2^{\sharp})\\
+      &#038;=\omega(v_1,J\eta_2^{\sharp})-\omega(v_2,J\eta_1^{\sharp})\\
+      &#038;=\eta_2(v_1)-\eta_1(v_2)\\
+      &#038;=\omega_{\mathrm{can}}((v_1,\eta_1),(v_2,\eta_2))
+    \end{align*}\]
+
+    where (a) the cross-terms vanished in line 2 because $L$ is Lagrangian and $\omega(J-,J-)=\omega(-,-)$; (b) in line 3 we used $\omega(-,J-)=g(-,-)$ and $g(-,\eta^{\sharp})=\eta(-)$; (c) line 3 followed from the definition of the canonical 2-form on $T^*L$.
+  \end{proof}
+  Therefore $\sigma:=\exp^*\omega-\omega_{\mathrm{can}}$ is zero along $L$. Since $T^*L$ retracts onto $L$, any closed differential form which vanishes along $L$ must be exact, therefore $\sigma=d\eta$.
+
+  Let $\omega_t$ be the form $\omega_{\mathrm{can}}+t\sigma$ (so that $\omega_0=\omega_{\mathrm{can}}$ and $\omega_1=\exp^*\omega$) and let $v_t$ be the vector $\omega_t$-dual to $-\eta$, that is $\iota_{v_t}\omega_t=-\eta$. Let $\phi_t\colon T^*L\to T^*L$ be the time $t$ flow of the vector field $v_t$ (starting with $\phi_0=\mathrm{id}$). Since $T^*L$ is not compact, this flow might not exist for all $t$ or for all points in $T^*L$, however, since $L$ is compact, there is a star-shaped neighbourhood $W\subset T^*L$ and a finite $T&#038;gt;0$ such that $\phi_t\colon W\to T^*L$ exists as a local diffeomorphism for all $0\leq t\leq T$.
+
+  We now use <a link="moser.xml">Moser's trick</a> to show that:
+  \begin{Claim}
+    The immersion $\exp\circ\phi_1\colon W\to X$ is symplectic, that is $(\exp\circ\phi_1)^*\omega=\omega_{\mathrm{can}}$.
+  \end{Claim}
+  \begin{proof}
+    Note that $(\exp\circ\phi_1)^*\omega=\phi_1^*\omega_1$ and $\omega_{\mathrm{can}}=\phi_0^*\omega_0$. Differentiating with respect to $t$ we see that
+  \[\frac{d}{dt}\phi_t^*\omega_t=\phi_t^*\sigma+\phi_t^*\mathcal{L}_{v_t}\omega_t.\]
+  By <a link="cartan-formula.xml">Cartan's formula</a>, $\mathcal{L}_{v_t}\omega_t=d\iota_{v_t}\omega_t=-d\eta$ (since $d\omega_t=0$). Therefore $\frac{d}{dt}\phi_t^*\omega_t=0$ and $\phi_0^*\omega_0=\phi_1^*\omega_1$, as required.
+  \end{proof}
+
+  To see that this is canonical up to homotopy, note that the only choices we made were of the compatible almost complex structure (of which there is a <a link="almost-complex-structure.xml" lid="contractible">contractible set of choices</a>) and of the star-shaped neighbourhood $W$ (similarly - any two star-shaped sets are homotopic via a canonical radially homotopy).
+\end{proof}
+
+\end{document}

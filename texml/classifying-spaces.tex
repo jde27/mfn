@@ -1,0 +1,66 @@
+\title{Classifying spaces for complex vector bundles}
+
+\author{Jonny Evans}
+\email{j.d.evans@ucl.ac.uk}
+
+%@bu.xml
+%@grassmannian.xml
+%@vector-bundle.xml
+%@fibre-bundle.xml
+%@characteristic-class.xml
+%@chern-class.xml
+
+%#TopologyOfLieGroups
+%#Bundles
+
+\begin{document}
+
+\section{Existence of classifying maps}
+
+Let $X$ be a compact Hausdorff space and suppose that $E\to X$ is a rank $k$ complex vector bundle over $X$.
+\begin{Lemma}[lma1]
+There exists an inclusion $\alpha\colon E\to\underline{\CC^N}$ of $E$ as a subbundle of the trivial bundle $\underline{\mathbf{C}^N}$ for some $N$.
+\end{Lemma}
+\begin{proof}
+By compactness, we can find a finite collection of open sets $U_i\subset X$, $i=1,\ldots,n$ such that $E|_{U_i}$ can be trivialised. For each $U_i$, let $\sigma_{i,1},\ldots,\sigma_{i,k}$ be sections of $E|_{U_i}$ such that $\sigma_{i,1}(x),\ldots,\sigma_{i,k}(x)$ form a basis of the fibre $E_x$ at every $x\in U_i$. Then every $v\in E_x$ can be written in a unique way as $v=\sum_{j=1}^kv_j\sigma_{i,j}(x)$. We define a map $a_i\colon E|_{U_i}\to X\times\mathbf{C}^k$ by
+\[a_i(v)=(x,v_1,\ldots,v_k)\mbox{ (where }v\in E_x\mbox{).}\]
+Let $\rho_i\colon U_i\to\mathbf{R}$ be a partition of unity subordinate to this cover. Then define $\alpha\colon E\to X\times\mathbf{C}^{kn}$ by
+\[\alpha(v)=(x,\rho_1(x)a_1(v),\ldots,\rho_n(x)a_n(v))\mbox{ (where }v\in E_x\mbox{)}\]
+This makes sense as an expression because $\rho_j$ is supported in $U_j$, which is where $a_j$ is defined. It is an embedding because at every point $x$ one of the $\rho_j$ is nonzero and the corresponding $a_j$ embeds $E_x$ into the corresponding factor of $\mathbf{C}^{kn}$.
+\end{proof}
+
+\begin{Definition}[dfn1]
+An inclusion $\alpha$, as in the lemma, picks out a copy of $\mathbf{C}^k\subset\mathbf{C}^N$ for each $x\in X$ (the fibre of $E$ at $x$) and therefore we get a map $f\colon X\to\mathrm{Gr}(k,N)$, where $\mathrm{Gr}(k,N)$ is the <a link="grassmannian.xml">Grassmannian</a> of complex $k$-planes in $\CC^N$. We call this a {\em classifying map} for $E$.
+\end{Definition}
+
+Let $E(k,N)$ denote the <a link="grassmannian.xml" lid="tautologicalbundle">tautological bundle</a> over $\mathrm{Gr}(k,N)$. By construction,
+\[f^*E(k,N)\cong E\]
+Since there are natural embeddings
+\[\cdots\to\mathrm{Gr}(k,N)\to\mathrm{Gr}(k,N+1)\to\cdots,\]
+you can make sense of the limit as $N\to\infty$.
+\begin{Definition}[dfn2]
+Define the {\em classifying space} and the {\em universal bundle} over it by
+\[BU(k):=\lim_{N\to\infty}\mathrm{Gr}(k,N)\qquad E(k)=\lim_{N\to\infty}E(k,N)\]
+For some further discussion of the spaces $BU(k)$, in particular about their topology, see <a link="bu.xml">here</a>.
+\end{Definition}
+<a link="classifying-spaces.xml" lid="lma1"/> then implies that any bundle $E$ is isomorphic to $f^*E(k)$ for some map $f\colon X\to BU(k)$.
+
+\section{Uniqueness of classifying maps}
+
+\begin{Lemma}[lma2]
+Two maps $f_0,f_1\colon X\to BU(k)$ are homotopic if and only if $f_0^*E(k)\cong f_1^*E(k)$.
+\end{Lemma}
+\begin{proof}
+Only if: Pull-back of bundles along homotopic maps are always isomorphic by <a link="basic-bundles.xml" lid="lma1"/>.
+ 
+If: Since $X$ is compact, the maps $f_i$ land in $\mathrm{Gr}(k,N_i)$ for some $N_i$. Let $E_i=f_i^*E(k,N_i)$ and let $\alpha_i\colon E_i\to \underline{\CC^{N_i}}$ be the inclusion maps from <a link="classifying-spaces.xml" lid="lma1"/>. The inclusions $(\alpha_0,0)$ and $(0,\alpha_1)$ embed $E_0$ and $E_1$ into $\underline{\CC^{N_0+N_1}}$. There is a homotopy of inclusion maps
+\[\alpha_t=((1-t)\alpha_0,t\alpha_1)\colon E\to\underline{\CC^{N_0}}\oplus\underline{\CC^{N_1}}\]
+which induces a homotopy of classifying maps $f_t\colon X\to\mathrm{Gr}(k,N_0+N_1)$ between $f_0$ and $f_1$, proving the lemma.
+  
+One small point: we tacitly used the fact that the inclusion $(0,\alpha_1)$ gives a classifying map which is homotopic to $f_1$. Since $f_1$ is the classifying map obtained from the inclusion $(\alpha_1,0)$, it suffices to show that $(0,\alpha_1)$ and $(\alpha_1,0)$ are homotopic as inclusions $E_1\to\underline{\CC^{N_0+N_1}}$. This is true because the linear maps which permute coordinates of $\CC^N$ are isotopic to the identity in $GL(N,\CC)$.
+\end{proof}
+Overall this tells us:
+\begin{Theorem}
+The map $[f]\mapsto f^*E(k)$ defines a bijection between the set of homotopy classes of maps $X\to BU(k)$ and the set of isomorphism classes of complex rank $k$ vector bundles over $X$.
+\end{Theorem}
+\end{document}

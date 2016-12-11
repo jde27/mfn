@@ -1,0 +1,102 @@
+This is a temporary file.
+\documentclass{article}
+
+\title{Flux}
+\author{Jonny Evans}
+
+%#Flux
+
+%@hamiltonian-paths-and-flux.xml
+%@flux-group.xml
+
+\begin{document}
+
+\section{Flux}
+
+Let $(X,\omega)$ be a symplectic manifold and let $\mathrm{Symp}(X,\omega)$ and $\mathrm{Symp}_0(X,\omega)$ denote, respectively, the symplectomorphism group and the connected component of the identity in $\mathrm{Symp}(X,\omega)$. A symplectic isotopy is a path $\psi=\{\psi_t\}_{t=0}^T$ in $\mathrm{Symp}_0(X,\omega)$ with $\psi_0=\mathrm{id}$.
+
+\begin{Definition}
+  <ul>
+  <li>Let $\psi=\{\psi_t\}_{t=0}^T$ be a symplectic isotopy and $\gamma\colon S^1\to X$ be a loop in $X$. Let $\Gamma(s,t)=\psi_t(\gamma(s))$ denote the trace of $\gamma$, that is the cylinder traced out by $\gamma$ under the family of symplectomorphisms $\psi$. The flux of $\psi$ through $\gamma$ is
+      \[\begin{align*}
+        \mathfrak{flux}(\psi)_0^1(\gamma)&#038;:=\int_{S^1\times[0,T]}\Gamma^*\omega\\
+        &#038;=\int_0^T\int_0^{2\pi}\omega(\dot{\gamma}(s),X_t(\gamma(s)))ds dt.
+      \end{align*}\]
+      </li>
+      <li>Let $\ell=\{\ell_t\colon L\to X\}_{t=0}^T$ be a family of Lagrangian immersions and $\gamma\colon S^1\to L$ be a loop in $L$. Let $\Gamma(s,t)=\ell_t(\gamma(s))$ be the trace of $\gamma$. The flux of $\ell$ through $\gamma$ is
+      \[\mathfrak{flux}(\ell)_0^T(\gamma)=\int_{S^1\times[0,T]}\Gamma^*\omega\]
+      </li>
+      </ul>
+\end{Definition}
+
+Note that if $\ell_t=\psi_t\circ\ell_0$ then $\mathfrak{flux}(\psi)_0^T(\psi_0\circ\gamma)=\mathfrak{flux}(\ell)_0^T(\gamma)$.
+
+\begin{Lemma}
+  Suppose $\psi$ is a Hamiltonian isotopy, i.e. for all $t$, $\frac{d}{dt}\psi_t=X_t\circ\psi_t$ with $\iota_{X_t}\omega=-dH_t$ for some family of functions $H_t$. Then, for any loop $\gamma$, the flux of $\psi$ through $\gamma$ vanishes:
+\end{Lemma}
+\begin{proof}
+  \begin{align*}
+    \mathfrak{flux}(\psi)_0^T(\gamma)&#038;=\int_0^T\int_0^{2\pi}\omega(\dot{\gamma}(s),X_t(\gamma(s)))ds dt\\
+    &#038;=\int_0^T\int_0^{2\pi}dH_t(\dot{\gamma}(s))dsdt\\
+    &#038;=\int_0^T(H_t(\gamma(2\pi))-H_t(\gamma(0)))dt
+    &#038;=0
+  \end{align*}
+  as $\gamma(0)=\gamma(2\pi)$.
+\end{proof}
+
+\begin{Example}
+  <ul>
+  <li>Suppose $X=T^2$ (with coordinates $(x,y)\in[0,1]^2$ and the standard area form $\omega=dx\wedge dy$) and let $\gamma_x(s)=(s,0)$ and $\gamma_y(s)=(0,s)$. Consider the family $\psi_t(x,y)=(x,y+kt)$ of symplectomorphisms. We have $\psi_t(\gamma_x(s))=(s,kt)$, which is a cylinder of area $kT$, and $\psi_t(\gamma_y(s))=(kt,s)$ which is a cylinder of area zero.</li>
+  <li>Suppose $X=\CC$ with coordinates $x+iy\in\CC$, $\omega=dx\wedge dy$ and $L=S^1$. Let $\ell_t(s)=(1+t)e^{is}$ be a family of concentric circles. Let $\gamma$ be the loop winding once anticlockwise around $L$. Then $\mathfrak{flux}(\ell)_0^T(\gamma)$ is the area of the annulus between radii $1+T$ and $1$, that is $\pi (T+2)T$. Note that in this case, $\ell_t$ is not simply $\psi_t\circ\ell_0$ because every path of symplectomorphisms of $\CC$ is a Hamiltonian isotopy (as $H^1(\CC;\RR)=0$) and therefore has flux zero.</li>
+</ul>
+\end{Example}
+
+\section{Properties of flux}
+
+\begin{Lemma}[lmafluxwdf]
+  {\bf Flux is cohomological:} If $\gamma$ and $\gamma'$ are homologous in $X$ and $\psi$ is a symplectic isotopy then
+  \[\mathfrak{flux}(\psi)_0^T(\gamma)=\mathfrak{flux}(\psi)_0^T(\gamma').\]
+  Therefore the flux depends only on the homology class of $\gamma$ and we define the flux
+  \[\mathfrak{flux}(\psi)_0^T\in H^1(X;\RR)\]
+  to be the cohomology class which evaluates on $[\gamma]$ to give the flux of $\psi$ through $\gamma$. Similarly, the flux of a path of Lagrangian immersions defines a class in $H^1(L;\RR)$.
+\end{Lemma}
+\begin{proof}
+  Let $h$ be a 2-chain with $\partial h=\gamma'-\gamma$. For convenience, we will assume that $h$ is represented by an immersed surface (this is always possible?). Let $H$ be the trace of this 2-chain under $\psi$. The boundary of $H$ has four components: $\Gamma'$ and $-\Gamma$ (the traces of $\gamma'$ and $\gamma$ respectively), $-h$ and $\psi_T(h)$. Since $d\omega=0$, Stokes's theorem tells us that
+  \[\int_{\Gamma'}\omega-\int_{\Gamma}\omega+\int_{\psi_T(h)}\omega-\int_h\omega=0\]
+  and since $\psi_1$ is a symplectomorphism, the third and fourth terms cancel, so
+  \[\mathfrak{flux}(\psi)_0^T(\gamma')-\mathfrak{flux}(\psi)_0^T(\gamma)=0.\]
+\end{proof}
+
+\begin{Lemma}[lmafluxhtpy]
+  {\bf Flux is homotopy invariant:} Suppose that $\psi$ and $\psi'$ are symplectic isotopies from $\mathrm{id}$ to $\phi=\psi_T=\psi'_T$. If these isotopies are homotopic rel endpoints then they have the same flux, i.e. if there is a 2-parameter family of symplectomorphisms
+  \[h_{s,t}\in\mathrm{Symp}_0(X,\omega),\quad (s,t)\in[0,1]\times[0,T]\]
+  with $h_{s,0}=\mathrm{id}$, $h_{s,T}=\phi$, $h_{0,t}=\psi_t$ and $h_{1,t}=\psi'_t$, then
+  \[\mathfrak{flux}(\psi)_0^T=\mathfrak{flux}(\psi')_0^T.\]
+\end{Lemma}
+\begin{proof}
+  For each loop $\gamma(\theta)$, $h_{s,t}(\gamma(\theta))$ traces out a 3-chain $H$ in $X$ such that
+  \[0=\int_Hd\omega=\left(\int_{\Gamma'}-\int_{\Gamma}\right)\omega\]
+  where $\Gamma$ and $\Gamma'$ are the traces of $\gamma$ under $\psi$ and $\psi'$ respectively.
+\end{proof}
+
+Note that if $\psi$ and $\psi'$ are symplectic isotopies with from $\mathrm{id}$ to $\phi$ then the union of traces $-\Gamma$ and $\Gamma'$ for a loop $\gamma$ gives a closed torus in $X$, whose $\omega$ area belongs to the subset $\mathrm{Per}(\omega)\subset\RR$ of {\em periods of $\omega$}, that is integrals of $\omega$ over classes in $H_2(X;\ZZ)$. Therefore $\mathfrak{flux}(\psi)_0^T-\mathfrak{flux}(\psi')_0^T\in H^1(X;\mathrm{Per}(\omega))$.
+
+\section{Equivalent formulation}
+
+\begin{Lemma}
+  Let $\psi=\{\psi_t\}_{t=0}^T$ be a symplectic isotopy and let $X_t$ be the (symplectic) vector field such that $\frac{d}{dt}\psi_t=X_t\circ\psi_t$. Then
+  \[\mathfrak{flux}(\psi)_0^T=-\int_0^T[\iota_{X_t}\omega]dt.\]
+  From this point of view, it is clear that a Hamiltonian isotopy has zero flux, since $[\iota_{X_t}\omega]=0$ for all $t$. Another way of writing the equation is to define $X=\int_0^TX_tdt$, whereupon we get $\mathfrak{flux}(\psi)_0^T=[\iota_X\omega]$.
+\end{Lemma}
+
+What does the notation mean?
+<ul>
+<li>Since $X_t$ is symplectic, $\iota_{X_t}\omega$ is closed and so defines a path of cohomology classes $[\iota_{X_t}\omega]$. One picks a basis of $H^1(X;\RR)$ and writes coordinate functions for this path in terms of the basis, then integrates these coordinate functions in $t$ to get $\int_0^T[\iota_{X_t}\omega]dt$.</li>
+<li>For each $x\in X$, $X_t$ gives a path in $T_xX$, and when we write $\int X_tdt$ we mean the integral of this path of vectors at $x$, which gives a vector $X$ at $x$.</li>
+</ul>
+
+\begin{proof}
+  To come...
+\end{proof}
+
+\end{document}

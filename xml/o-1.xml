@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+
+<card title="The bundle $\mathcal{O}(-1)$" created="2016-03-06" date="2016-12-11" type="tex">
+<metadata>
+<authors>
+<author name="Jonny Evans" email="j.d.evans@ucl.ac.uk"/>
+</authors>
+<links>
+<link href="classifying-spaces.xml"/>
+<link href="vector-bundle.xml"/>
+<link href="fibre-bundle.xml"/>
+<link href="gr-complex.xml"/>
+<link href="gr-real.xml"/>
+<link href="cpn.xml"/>
+</links>
+<tags>
+<tag name="TopologyOfLieGroups"/>
+<tag name="Bundles"/>
+</tags>
+</metadata>
+<bod>
+<section num="1" name="Total space">
+
+<p>
+Consider homogeneous coordinates $[x:y]$ on $\CC P^1$. The coordinates $x$ and $y$ themselves are not well-defined functions on $\CC P^1$: each point $[x_0:y_0]$ can be described by any pair $x,y$ such that the ratio of $x$ to $y$ equals the ratio of $x_0$ to $y_0$. However, $x$ and $y$ do make sense as functions on a different space:
+</p>
+
+<env type="Definition" id="dfntautbun" sectionnum="1" itemnum="1">
+<p>
+Define $\mathcal{O}(-1)$ to be the following variety
+\[\mathcal{O}(-1):=\{(x,y,[a:b])\in\CC^2\times\CC P^1\ :\ ay=bx\}\subset\CC^2\times\CC P^1.\]
+This variety contains a Zariski open set $U=\{(x,y,[x:y])\ :\ (x,y)\neq (0,0)\}$. The complement of this Zariski open set is the set of points $\{(0,0)\}\times\CC P^1$. Indeed one could also define it as the Zariski closure of $U$.
+</p>
+</env>
+<p>
+This variety admits projections $\pi\colon\mathcal{O}(-1)\to\CC P^1$, $\pi(x,y,[a:b])=[a:b]$, and $F=(F_1,F_2)\colon\mathcal{O}(-1)\to\CC^2$, $F_1(x,y,[a:b])=x$, $F_2(x,y,[a:b])=y$. In particular, $x$ and $y$ make sense as functions $F_1$ and $F_2$ on the total space of $\mathcal{O}(-1)$.
+</p>
+
+</section>
+<section num="2" name="Sections">
+
+<p>
+The projection $\pi$ exhibits $\mathcal{O}(-1)$ as the total space of a complex line bundle over $\CC P^1$: the fibre over $[a:b]$ is the set of all points $(\lambda a,\lambda b)$, $\lambda\in\CC$. Recall that $\CC P^1$ parametrises complex lines in $\CC^2$ passing through the origin, so that the point $[a:b]$ parametrises the line $\{(\lambda a,\lambda b)\ :\ \lambda\in\CC\}$. Therefore the fibre $\pi^{-1}([a:b])$ is precisely the complex line in $\CC^2$ which is labelled $[a:b]$ in homogeneous coordinates! For this reason, we call $\mathcal{O}(1)$ the <i> tautological line bundle</i> over $\CC P^1$.
+</p>
+
+<env type="Lemma" id="lmatautbun" sectionnum="2" itemnum="1">
+<p>
+$\mathcal{O}(-1)$ has no global holomorphic sections except the zero section. (The zero section is the section $\sigma\colon\CC P^1\to\mathcal{O}(-1)$ given by $\sigma([a:b])=(0,0,[a:b])$.)
+</p>
+</env>
+<proof vis="off" id="prf2item1">
+<p>
+Suppose there were another global holomorphic section, i.e. a map $\CC P^1\to \mathcal{O}(-1)$ such that $\pi\circ\sigma([a:b])=[a:b]$. Then
+\[aF_2(\sigma([a:b]))=bF_1(\sigma([a:b])).\]
+If we are assuming this is not the zero section then there exists a point $[a:b]$ (and hence an open set around that point) where either $F_1(\sigma([a:b]))$ or $F_2(\sigma([a:b]))$ is nonzero (WLOG say $F_2)$. This means that $\frac{F_1\circ\sigma}{F_2\circ\sigma}$ is a well-defined holomorphic function on that open set. Since $aF_2=bF_1$, $F_1/F_2=a/b$ where is is defined, and this is nonconstant. In particular, either $F_1\circ\sigma$ or $F_2\circ\sigma$ is nonconstant. But $F_1\circ\sigma$ and $F_2\circ\sigma$ are globally-defined holomorphic functions on $\CC P^1$, hence constant by Liouville's theorem.
+</p>
+</proof>
+
+</section></bod>
+</card>

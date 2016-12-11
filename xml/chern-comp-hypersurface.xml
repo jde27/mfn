@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+
+<card title="Chern classes for hypersurfaces in $\CC P^n$" created="2016-03-29" date="2016-12-11" type="tex">
+<metadata>
+<authors>
+<author name="Jonny Evans" email="nomail"/>
+</authors>
+<links>
+<link href="chern-class.xml"/>
+<link href="characteristic-class.xml"/>
+</links>
+<tags>
+<tag name="WorkedExample"/>
+</tags>
+</metadata>
+<bod>
+<section num="1" name="Computation of Chern classes">
+
+<p>
+Let $X\subset\CC P^n$ be a smooth hypersurface of degree $d$. Let $H$ denote the cohomology class in $H^2(\CC P^n;\ZZ)$ Poincare dual to a hyperplane in $\CC P^n$ and $H|_X$ denote the cohomology class in $H^2(X;\ZZ)$ Poincare dual to a hyperplane section of $X$.
+</p>
+
+<env type="Lemma" id="section1item1" sectionnum="1" itemnum="1">
+<p>
+The normal bundle $\nu X$ of $X$ in $\CC P^n$ has first Chern class $dH|_X$.
+</p>
+</env>
+<proof vis="off" id="prf1item1">
+<p>
+The vanishing locus of a section of $\nu X$ is Poincare dual to $c_1(\nu X)$. If $X'$ is another hypersurface of degree $d$ which is $\mathcal{C}^1$-close to $X$ then it defines a section of $\nu X$. The vanishing locus of this section is the intersection between $X$ and $X'$ which is homologous to $dH|_X$ as $X'$ is homologous to $dH$.
+</p>
+</proof>
+
+<p>
+The total Chern class of a vector bundle $E\to B$ is the formal sum
+\[c(E)=1+c_1(E)+c_2(E)+\cdots\in H^*(B;\ZZ)\]
+living in mixed degree in the cohomology of $B$. Recall the <a link="chern-class.xml" lid="whitney">Whitney sum formula</a>: if $E\cong F\oplus F'$ as complex vector bundles then
+\[c(E)=c(F)c(F').\]
+In the hypersurface setting, since $\nu X=(T\CC P^n|_X)/TX$, we have
+\[c(T\CC P^n|_X)=c(TX)c(\nu X).\]
+We use this, first to find the total Chern class of $T\CC P^n$, then to find the total Chern class of $TX$.
+</p>
+
+<env type="Corollary" id="corcherncp" sectionnum="1" itemnum="2">
+<p>
+Taking $d=1$, so that $X=\CC P^{n-1}$, we see that
+\[c(T\CC P^n|_X)=c(T\CC P^{n-1})(1+H|_X)\]
+so $c(T\CC P^n)=(1+H)^{n+1}$ by induction. In particular,
+\[c_1(\CC P^n)=(n+1)H,\quad c_2(\CC P^n)=\binom{n+1}{2}H^2.\]
+</p>
+</env>
+
+<env type="Corollary" id="section1item3" sectionnum="1" itemnum="3">
+<p>
+If $X$ is a hypersurface of degree $d$,
+\[(1+H)^n|_X=c(TX)(1+dH|_X),\]
+which determines $c(TX)$ by comparing terms order by order. In particular,
+\[c_1(X)=(n+1-d)H|_X\]
+so $X$ is Fano if $d\leq n$, Calabi-Yau if $d=n+1$ and general type if $d&#038;gt;n+1$.
+</p>
+</env>
+
+<env type="Corollary" id="section1item4" sectionnum="1" itemnum="4">
+<p>
+When $n=2$ and $X$ is a curve of degree $d$ in $\CC P^2$, $H|_X$ is a collection of $d$ points in $X$ and we deduce the degree-genus formula
+\[2-2g(X)=c_1(X)=(3-d)d\]
+or
+\[g(X)=\frac{2-3d+d^2}{2}=\frac{(d-1)(d-2)}{2}.\]
+</p>
+</env>
+
+</section></bod>
+</card>

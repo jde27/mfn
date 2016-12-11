@@ -1,0 +1,28 @@
+\documentclass{article}
+
+\title{Infinitesimal group actions}
+\author{Jonny Evans}
+
+%#LieGroups
+%#LieAlgebras
+%#GroupActions
+%#Diffeomorphisms
+
+\begin{document}
+
+\section{Smooth group actions}
+
+Let $X$ be a smooth manifold and $G$ be a Lie group. A smooth action of $G$ on $X$ is a smooth map
+\[a\colon G\times X\to X\]
+satisfying the axioms of an action map. It follows that, for each $g\in G$, the map $g\colon X\to X$, $gx=a(g,x)$, is a diffeomorphism. We therefore obtain an action homomorphism
+\[A\colon G\to\mathrm{Diff}(X).\]
+
+\section{Infinitesimal group actions}
+
+Given a smooth action of $G$ on $X$, we get a Lie algebra homomorphism
+\[A_*\colon\mathfrak{g}\to\mathfrak{diff}(X)\]
+where $\mathfrak{diff}(X)$ denotes the Lie algebra of vector fields, equipped with the Lie bracket. We can think of this as the derivative of the action homomorphism $A$ at the identity. Explicitly, suppose that $\xi\in\mathfrak{g}$ is a tangent vector at the identity of $G$ and $\gamma\colon[0,1]\to G$ is a path through $1\in G$ with $\dot{\gamma}(0)=\xi$. Through every $x\in X$ we get a path $\gamma_x(t):=\gamma(t)x$ and $A_*(\xi)$ is defined to be the vector field which at the point $x$ is the tangent vector $\dot{\gamma}_x(0)$.
+
+
+
+\end{document}

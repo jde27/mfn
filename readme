@@ -1,0 +1,12 @@
+Mathematical Fieldnotes
+
+System for storing small, interconnected chunks of information about maths.
+
+tex sourcefiles (amalgam of TeX and XML), are run through a compiler to produce 
+XML fieldnotes. These can then be viewed in a browser via an XSL stylesheet.
+
+To get in touch with the maintainer of this project, please email
+
+j.d.evans
+ucl.ac.uk
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+<card title="SymplecticLinearAlgebra" date="2016-12-11" type="tag">
+<!-- This page collects links to all field notes tagged SymplecticLinearAlgebra -->
+<bod>
+<index>
+<item href="symplectic-2-planes-in-4-space.xml">Symplectic 2-planes in 4-space</item>
+</index>
+</bod>
+</card>

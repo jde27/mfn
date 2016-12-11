@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+
+<card title="Grassmannians" created="2016-03-09" date="2016-12-11" type="tex">
+<metadata>
+<authors>
+<author name="Jonny Evans" email="j.d.evans@ucl.ac.uk"/>
+</authors>
+<links>
+<link href="classifying-spaces.xml"/>
+<link href="vector-bundle.xml"/>
+<link href="fibre-bundle.xml"/>
+<link href="gr-complex.xml"/>
+<link href="gr-real.xml"/>
+<link href="cpn.xml"/>
+<link href="o-1.xml"/>
+</links>
+<tags>
+<tag name="TopologyOfLieGroups"/>
+<tag name="Bundles"/>
+</tags>
+</metadata>
+<bod>
+<section num="1" name="Definition">
+<env type="Definition" id="section1item1" sectionnum="1" itemnum="1">
+<p>
+Fix a field $\mathbf{k}$. Let $0\leq r\leq n$ be integers. The <i> Grassmannian</i> $\mathrm{Gr}(r,n)$ is the space of $r$-dimensional $\mathbf{k}$-linear subspaces in $\mathbf{k}^n$.
+</p>
+</env>
+
+</section>
+<section num="2" name="Construction as a quotient">
+<env type="Lemma" id="section2item1" sectionnum="2" itemnum="1">
+<p>
+The Grassmannian can be identified with the quotient $GL(n)/\left(GL(r)\times GL(n-r)\right)$.
+</p>
+</env>
+<proof vis="off" id="prf2item1">
+There is a transitive action of $GL(n)$ on the Grassmannian $\mathrm{Gr}(r,n)$. The stabiliser of an $r$-plane is the subgroup of block-diagonal matrices $\left(\begin{array}{cc}A &#038;amp; 0 \\ 0 &#038;amp; B\end{array}\right)$ with $A\in GL(r)$ and $B\in GL(n-r)$.
+
+<p>
+To see this, let $V\in\mathrm{Gr}(r,n)$ and pick a basis $e_1,\ldots,e_n$ with $e_1,\ldots,e_r\in V\subset W$; with respect to this basis, such matrices are precisely the ones which preserve the span of the first $r$ vectors.
+</p>
+</proof>
+
+<p>
+If we are working over $\mathbf{k}=\mathbf{C}$ or $\mathbf{R}$ and pick a (Hermitian) inner product on $\mathbf{k}^n$ then the same proof works with unitary (or even special unitary) or orthonormal (or even right-handed orthonormal) bases, and we get identifications
+\[\mathrm{Gr}(r,n)\cong U(n)/\left(U(r)\times U(n-r)\right)\cong SU(n)/S\left(U(r)\times U(n-r)\right)\]
+over $\mathbf{C}$ and
+\[\mathrm{Gr}(r,n)\cong O(n)/\left(O(r)\times O(n-r)\right)\cong SO(n)/S\left(O(r)\times O(n-r)\right).\]
+Here, when we write $S(G\times H)$ we mean all matrices in $G\times H$ with determinant $1$.
+</p>
+
+</section>
+<section num="3" name="Orientations and other structures">
+
+<p>
+Working over $\RR$, one can look at the Grassmannian of oriented real planes, that is real planes equipped with a volume form up-to-scale:
+\[\mathrm{Gr}^+(r,n)\cong SO(n)/\left(SO(r)\times SO(n-r)\right)\]
+which is a double cover of $\mathrm{Gr}(r,n)$.
+</p>
+
+<p>
+Working over $\CC$, one can look at the Grassmannian of complex planes equipped with a complex volume form up-to-scale (i.e. a phase):
+\[SU(n)/\left(SU(r)\times SU(n-r)\right)\]
+</p>
+
+</section>
+<section num="4" name="Tautological bundle">
+<env type="Definition" id="tautologicalbundle" sectionnum="4" itemnum="1">
+<p>
+There is a tautological vector bundle $E(r,n)$ over $\mathrm{Gr}(r,n)$ whose fibre at an $r$-plane $\sigma$ is the $r$-plane $\sigma$.
+</p>
+</env>
+</section></bod>
+</card>

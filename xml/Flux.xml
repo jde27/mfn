@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+<card title="Flux" date="2016-12-11" type="tag">
+<!-- This page collects links to all field notes tagged Flux -->
+<bod>
+<index>
+<item href="flux.xml">Flux</item>
+<item href="hamiltonian-paths-and-flux.xml">Hamiltonian paths and flux</item>
+</index>
+</bod>
+</card>

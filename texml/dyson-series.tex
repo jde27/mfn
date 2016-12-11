@@ -1,0 +1,44 @@
+\documentclass{amsart}
+
+\title{Dyson series}
+\author{Jonny Evans}
+\email{j.d.evans@ucl.ac.uk}
+
+%#LieGroups
+%#QuantumFieldTheory
+
+\begin{document}
+
+\section{Time-ordered exponential}
+
+\begin{Definition}
+  Let $V(t)$ be a path of bounded linear operators (e.g. finite-dimensional matrices). The {\em time-ordered exponential} (or {\em Dyson series}) of $V(t)$ is the series
+  \[\mathcal{T}\exp\left(\int_0^tV(s)ds\right):=1+\int_0^tdt_1V(t_1)+\int_0^tdt_1\int_0^{t_1}dt_2V(t_1)V(t_2)+\cdots.\]
+\end{Definition}
+
+This is called the time-ordered exponential because we can think of it as being obtained from the usual exponential
+\[1+\int_0^tV(s_1)ds_1+\frac{1}{2!}\int_0^tds_1\int_0^tds_2V(s_1)V(s_2)+\cdots+\int_0^tds_1\cdots\int_0^tds_kV(s_1)\cdots V(s_k)+\cdots\]
+by splitting the domain of integration for the $k$th term, $[0,t]^k$, into $k!$ open pieces where the $s_i$ are distinct and reordering the factors $V(s_1)\cdots V(s_k)$ to $V(t_1)\cdots V(t_k)$ where $t_1\lt t_2\lt \cdots\lt t_k$ is a permutation of $s_1,\ldots,s_k$. This results in $k!$ copies of the integral
+\[\int_0^tdt_1\int_0^{t_1}dt_2\cdots\int_0^{t_{k-1}}dt_kV(t_1)\cdots V(t_k).\]
+
+\begin{Theorem}
+  Assuming $V(t)$ is bounded, the Dyson series converges absolutely and uniformly to a family of operators $U(t)=\mathcal{T}\exp\left(\int_0^tV(s)ds\right)$ (the same is true for the sequence of partial sums of $t$-derivatives). Moreover, $U(t)$ solves the ordinary differential equation
+  \[\frac{d}{dt}U(t)=V(t)U(t).\]
+\end{Theorem}
+\begin{proof}
+  To get absolute convergence, consider the norm
+  \[\|\int_0^tdt_1\cdots\int_0^{t_{k-1}}dt_kV(t_1)\cdots V(t_k)\|.\]
+  This is bounded above by
+  \[\int_0^tdt_1\cdots\int_0^{t_{k-1}}dt_k\|V(t_1)\|\cdots\|V(t_k)\|\]
+  which is, in turn bounded above by
+  \[\frac{1}{k!}\int_0^tdt_1\cdots\int_0^t dt_k\|V(t_1)\|\cdots\|V(t_k)\|.\]
+  This series sums to $\exp\left(\int_0^tV(s)ds\right)$ which converges, proving that the original series converges absolutely. [Proof of uniform convergence omitted for now.]
+  
+  Since it converges uniformly along with its $t$-derivatives, we can differentiate term by term. Using the fundamental theorem of calculus, we get
+  \[\frac{d}{dt}U(t)=V(t)+\int_0^tdt_2V(t)V(t_2)+\int_0^tdt_2\int_0^{t_2}dt_3V(t)V(t_2)V(t_3)+\cdots\]
+  and this is just $V(t)U(t)$.
+\end{proof}
+
+Note: When the Dyson series appears in quantum mechanics/quantum field theory, the operators involved are unbounded and so the series does not converge in general (it's only something like an asymptotic expansion).
+
+\end{document}

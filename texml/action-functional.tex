@@ -1,0 +1,56 @@
+\documentclass{amsart}
+
+\title{The action functional}
+\author{Jonny Evans}
+\email{j.d.evans@ucl.ac.uk}
+
+%#FloerTheory
+%#Lagrangians
+
+\begin{document}
+
+\section{Exact Lagrangians}
+
+Let $(X,\omega=d\lambda)$ be an exact symplectic manifold.
+
+\begin{Definition}
+A Lagrangian embedding $i\colon L\to X$ is {\em exact} if $i^*\lambda=df$ for some function $f\colon L\to\RR$.
+\end{Definition}
+
+\begin{Remark}[stokes]
+The great advantage of exact manifolds and exact Lagrangians is that, if $J$ is a compatible almost complex structure, there can be no nonconstant holomorphic maps from a compact Riemann surface $\Sigma$ to $X$ sending $\partial\Sigma$ to $L$.
+\end{Remark}
+\begin{proof}
+The $\omega$-area $\int_{\Sigma} u^*\omega$ of such a holomorphic curve $u$ is nonnegative and is zero if and only if $u$ is constant. By Stokes's theorem, exactness implies that the integral is zero.
+\end{proof}
+
+\section{Action on paths}
+
+\begin{Definition}
+Let $\iota_0\colon L_0\to X$ and $\iota_1\colon L_1\to X$ be exact Lagrangian submanifolds, with $\iota_i^*\lambda=df_i$, and let $P(L_0,L_1)$ denote the space of smooth paths $\gamma\colon[0,1]\to X$ with $\gamma(i)\in L_i$, $i=0,1$. The action functional $A\colon P(L_0,L_1)\to\RR$ is the function
+\begin{align*}
+A(\gamma)&=\int_0^1\gamma^*\lambda+f_1(\gamma(1))-f_0(\gamma(0))\\
+&=\int_0^1\lambda(\dot{\gamma}(t))dt+f_1(\gamma(1))-f_0(\gamma(0))
+\end{align*}
+\end{Definition}
+
+A variation of a path $\gamma\in P(L_0,L_1)$ is a vector field $v(t)$ along $\gamma$ (i.e. a section of $\gamma^*TX$) such that $v(i)\in TL_i$, $i=0,1$. We think of the space of variations as the tangent space to $P(L_0,L_1)$ at $\gamma$.
+
+\begin{Lemma}
+Let $v$ be a variation of $\gamma$. The directional (i.e. Gateaux) derivative of $A$ in the $v$-direction is
+\[d_{\gamma}A(v)=\int_0^1\omega(\dot{\gamma}(t),v(t))dt.\]
+In particular, this vanishes for all variations $v$ if and only if $\gamma$ is constant ($\dot{\gamma}(t)=0$ for all $t$). This means that the critical points of $A$ are the constant paths at points in $L_0\cap L_1$.
+\end{Lemma}
+\begin{proof}
+If $v$ is a variation then $F(s,t):=\gamma(t)+sv(t)$ is a family of curves parametrised by $s$ (here we're using a coordinate chart around $\gamma$ so we can add points and vectors). The family of curves traces out a surface $S=F([0,\epsilon]\times[0,1])$ and, by Stokes's theorem, the $\omega$-area of $S$ is
+\[\int_{[0,\epsilon]\times[0,1]}F^*\omega=\int_{\partial([0,\epsilon]\times[0,1])}F^*\lambda=A(\gamma+\epsilon v)-A(\gamma).\]
+We therefore have
+\begin{align*}
+  d_{\gamma}A(v)&=\lim_{\epsilon\to 0}\frac{1}{\epsilon}\int_SF^*\omega\\
+  &=\lim_{\epsilon\to 0}\int_0^1\frac{1}{\epsilon}\int_0^{\epsilon}\omega(\dot{\gamma}+s\dot{v},v)ds dt\\
+  &=\int_0^1\omega(\dot{\gamma},v)dt
+\end{align*}
+because the term $\frac{1}{\epsilon}\int_0^1\int_0^{\epsilon}sds\omega(\dot{v},v)dt$ goes to zero.
+\end{proof}
+
+\end{document}

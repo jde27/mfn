@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+
+<card title="Index" created="2016-06-19" date="2016-12-11" type="index">
+<metadata>
+<authors>
+<author name="Jonny Evans" email="j.d.evans@ucl.ac.uk"/>
+</authors>
+</metadata>
+<bod>
+<section name="Recent updates">
+<recent href="graded-lagrangian-graphs.xml" date="2016-12-11"/>
+<recent href="flux.xml" date="2016-12-11"/>
+<recent href="dyson-series.xml" date="2016-12-11"/>
+<recent href="classifying-spaces.xml" date="2016-12-11"/>
+<recent href="chern-comp-hypersurface.xml" date="2016-12-11"/>
+<recent href="chekanov-torus.xml" date="2016-12-11"/>
+<recent href="bu.xml" date="2016-12-11"/>
+<recent href="toric.xml" date="2016-12-11"/>
+<recent href="action-functional.xml~" date="2016-12-11"/>
+</section>
+<section name="Browse by tag">
+<tag name="Bundles"/><tag name="FloerTheory"/><tag name="Flux"/><tag name="Lagrangians"/><tag name="LieGroups"/><tag name="QuantumFieldTheory"/><tag name="SymplecticLinearAlgebra"/><tag name="TopologyOfLieGroups"/><tag name="WorkedExample"/></section>
+<section name="Browse alphabetically">
+<p><b>A</b><br/><link href="about.xml"/><link href="action-functional.xml"/></p><p><b>B</b><br/><link href="bu.xml"/></p><p><b>C</b><br/><link href="chekanov-torus.xml"/><link href="chern-comp-hypersurface.xml"/><link href="classifying-spaces.xml"/></p><p><b>D</b><br/><link href="dyson-series.xml"/></p><p><b>F</b><br/><link href="flux.xml"/></p><p><b>G</b><br/><link href="graded-lagrangian-graphs.xml"/><link href="grassmannian.xml"/></p><p><b>H</b><br/><link href="hamiltonian-paths-and-flux.xml"/><link href="homotopy-tables-so.xml"/><link href="homotopy-tables-u.xml"/></p><p><b>I</b><br/></p><p><b>L</b><br/><link href="lagrangian-phase.xml"/><link href="lagrangian-submanifold.xml"/></p><p><b>M</b><br/><link href="maslov-class.xml"/></p><p><b>O</b><br/><link href="o-1.xml"/></p><p><b>Q</b><br/></p><p><b>S</b><br/><link href="superpotential.xml"/><link href="symplectic-2-planes-in-4-space.xml"/><link href="symplectic-connection.xml"/><link href="symp-quadric.xml"/></p><p><b>T</b><br/><link href="toric.xml"/></p><p><b>W</b><br/></p></section>
+</bod>
+</card>

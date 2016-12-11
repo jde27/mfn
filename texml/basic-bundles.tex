@@ -1,0 +1,28 @@
+\documentclass{amsart}
+
+\title{Pull-back of bundles}
+\author{Jonny Evans}
+\email{j.d.evans@ucl.ac.uk}
+
+%#Bundles
+
+\begin{document}
+
+\section{Definition}
+\begin{Definition}
+Let $X$ and $Y$ be topological spaces and suppose that $\pi\colon E\to Y$ is a fibre bundle with fibre $F$. Given a continuous map $f\colon X\to Y$, define the {\em pullback bundle}
+\[f^*E:=\{(x,e)\ in\ X\times E\ :\ \pi(e)=f(x)\}.\]
+<a link="https://en.wikipedia.org/wiki/Pullback_bundle#Formal_definition">See also Wikipedia for further discussion.</a>
+\end{Definition}
+
+\section{Pull-back of bundles along homotopic maps are isomorphic}
+
+Let $X$ be a compact Hausdorff space.
+\begin{Lemma}[lma1]
+  Let $Y$ be a topological space and $E\to Y$ be a complex vector bundle over $Y$. Suppose that $f_0$ and $f_1$ are maps $X\to Y$ which are homotopic. Then $f_0^*E$ and $f_1^*E$ are isomorphic.
+\end{Lemma}
+\begin{proof}
+  Let $F(x,t)\colon X\times [0,1]\to Y$ be the homotopy ($F(x,t)=f_t(x)$). Let $p_t\colon X\times [0,1]\to X\times\{t\}$ be the projection map and let $L=F^*E$, $L_t=(F|_{X\times\{t\}}\circ p_t)^*E$. Over $X\times\{t\}$ there is an isomorphism $L|_{X\times\{t\}}\to L_t|_{X\times\{t\}}$, i.e. a section of $\mathrm{Hom}(L,L_t)|_{X\times\{t\}}$ whose values are invertible linear maps. By the <a link="https://en.wikipedia.org/wiki/Tietze_extension_theorem">Tietze extension theorem</a>, this extends to a section over $X\times(t-\epsilon,t+\epsilon)$ for some $\epsilon$. This shows that the isomorphism type of $f_t^*E$ is locally constant, and since $[0,1]$ is connected it must be constant. Therefore $f_0^*E\cong f_1^*E$.
+\end{proof}
+
+\end{document}

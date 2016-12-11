@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+<card title="QuantumFieldTheory" date="2016-12-11" type="tag">
+<!-- This page collects links to all field notes tagged QuantumFieldTheory -->
+<bod>
+<index>
+<item href="dyson-series.xml">Dyson series</item>
+</index>
+</bod>
+</card>

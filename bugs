@@ -1,0 +1,20 @@
+This is a list of known issues/things to bear in mind.
+
+0001    Don't leave whitespace like
+
+        </li>
+
+        <li>
+
+        or texml will insert extra <p>/</p> tags between them.
+
+        In fact, don't leave random whitespace unless you're sure you want <p> tags.
+
+0002    Always put \[...\] around align, align*, gathers.
+
+        If you don't, texml will not go through them and replace < with &lt; etc
+
+0003    Always put a \begin{something}[label] on its own line. Same for \end.
+
+0004    When beginning an environment, you have to call it the thing you want it to 
+        appear as, e.g. \begin{Lemma} rather than \begin{lma}

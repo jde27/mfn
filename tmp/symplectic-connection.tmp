@@ -1,0 +1,84 @@
+This is a temporary file.
+\documentclass{article}
+
+\title{Symplectic connections}
+\author{Jonny Evans}
+\email{j.d.evans@ucl.ac.uk}
+
+\begin{document}
+
+\section{Symplectic connections}
+
+A symplectic fibration with fibre $(F,\omega)$ is a smooth fibre bundle $\pi\colon\mathcal{X}\to S$ with structure group $\mathrm{Symp}(F,\omega)$. A connection on this bundle is called symplectic if its parallel transport maps are symplectomorphisms. Here is a recipe for finding a symplectic connection.
+
+Let $\iota_s\colon X_s\to \mathcal{X}$ be the inclusion of the fibre $X_s=\pi^{-1}(s)$. We say that a 2-form $\Omega$ on $\mathcal{X}$ is compatible with $\pi$ if, for all $s\in S$, $\iota_s^*\Omega$ is a symplectic form on $X_s$. We can define a distribution of horizontal spaces for $\mathcal{X}\to S$ by
+\[\mathcal{H}_x=\left(T_xX_{\pi(x)}\right)^{\Omega}\]
+where, we recall, this means
+\[\{v\in T_x\mathcal{X}\ :\ \Omega(u,v)=0\mbox{ for all }u\in T_xX_{\pi(x)}\}.\]
+
+\begin{Definition}[dfnsympconn]
+  We say that $\Omega$ is {\em vertically-closed} if
+  \[\iota_{v_1}\iota_{v_2}d\Omega=0\]
+  for all pairs $v_1,v_2$ of vertical vectors. 
+\end{Definition}
+
+\begin{Lemma}[lma1]
+  Let $\mathcal{X}\stackrel{\pi}{\to}S$ be a symplectic fibration, $\Omega$ be a vertically-closed 2-form compatible with $\pi$, and $\mathcal{H}$ be the associated symplectic connection. The parallel transport map along a path $\gamma\colon[0,1]\to S$ gives a symplectomorphism $P_\gamma\colon X_{\gamma(0)}\to X_{\gamma(1)}$.
+\end{Lemma}
+\begin{proof}
+  Let $V$ be the horizontal lift of $\dot{\gamma}$, that is the unique horizontal vector field on $\gamma^*\mathcal{X}$ which projects to $\dot{\gamma}$ in $S$. Since $\iota_s^*\Omega=\omega_s$, we need to show that $\iota_s^*\mathcal{L}_V\Omega=0$. Cartan's formula for the Lie derivative of $\Omega$ along $V$ gives
+  \[\iota_s^*\mathcal{L}_V\Omega=\iota_s^*d\iota_V\Omega+\iota_s^*\iota_Vd\Omega.\]
+  The second term vanishes since $d\Omega$ vanishes on pairs of vertical vectors (and the $\iota_s^*$ means we only evaluate it on vertical vectors).
+
+  It remains to show that the first term vanishes. Since $V$ is horizontal, $\iota_V\Omega$ vanishes on vertical vectors. If we pick local coordinates $s_1,\ldots,s_m$ on $S$ and $x_1,\ldots,x_n$ on $X$, so that $\partial_{x_i}$ is vertical, this means that $\iota_V\Omega=\sum_ia_i(s,x)ds_i$. Then $d\iota_V\Omega=\sum_{i,j}\partial_{s_j}a_ids_j\wedge ds_i+\sum_{i,k}\partial_{x_k}a_idx_k\wedge ds_i$. When we pull this back via $\iota_s^*$ we get zero, since $\iota_s^*ds_i=0$.
+\end{proof}
+
+\begin{Lemma}
+  If, moreover, $\Omega$ is closed, then the holonomy of the connection around a contractible loop is Hamiltonian.
+\end{Lemma}
+\begin{proof}
+  Let $\gamma\colon S^1\to S$ be a contractible loop in $S$ and $h\colon D^2\to S$ be a nullhomotopy of $\gamma$. Since $D^2$ is contractible, the pullback bundle $h^*\mathcal{X}$ is trivial. The parallel transport map from $\gamma(0)$ to $\gamma(t)$ can therefore be thought of as a symplectomorphism $\Psi_t\colon F\to F$ where $F$ is the fibre.
+
+  \begin{Claim}
+    The <a link="flux.xml">flux</a> $\mathfrak{flux}(\Psi)_0^1$ of the symplectic isotopy $\Psi=\{\Psi_t\}_{t=0}^1$ vanishes.
+  \end{Claim}
+  \begin{proof}
+    Let $\rho\colon S^1\to F$ be a loop and let $\beta(\theta,\tau)=(\Psi_\tau(\rho(\theta)),1)\in F\times D^2$ be the cylinder traced out by $\rho$ under parallel transport in the fibre over $1$. Since $\iota_s^*\Omega=\omega$, we have
+    \[\mathfrak{flux}(\Psi_t)_0^1(\rho)=\int_{S^1\times[0,1]}\beta^*\Omega.\]
+    However, $\beta$ is homotopic to $B(\theta,\tau)=(\Psi_\tau(\rho(\theta)),e^{i2\pi \tau})$ and $B$ satisfies $\int_{S^1\times[0,1]} B^*\Omega=0$: $\partial\beta'/\partial\tau$ is contained in the horizontal distribution for the symplectic connection, which is $\omega$-orthogonal to the fibre, and hence to $\partial\beta'/\partial\theta$. Since $\Omega$ is closed, its integrals over two homotopic surfaces coincide, hence $\mathfrak{flux}(\Psi_t)_0^1(\rho)=0$ for all $\rho$.
+  \end{proof}
+
+   As the flux $\mathfrak{flux}(\Psi)_0^1$ vanishes, we deduce that $\Psi_1$ is Hamiltonian, since <a link="hamiltonian-paths-and-flux.xml" lid="flux-ham-path">any path of symplectomorphisms with vanishing total flux is homotopic rel endpoints to a Hamiltonian path</a>.
+\end{proof}
+
+
+\section{A useful lemma about conserved quantities}
+
+\begin{Lemma}[lmaconserved]
+Let $\mathcal{X}\stackrel{\pi}{\to}S$ be a symplectic fibre bundle and $\Omega$ a closed 2-form on $\mathcal{X}$ compatible with $\pi$; let $\mathcal{H}$ be the associated symplectic connection. Suppose that $H\colon\mathcal{X}\to\mathbf{R}$ is a Hamiltonian function which <a link="symplectic-vf.xml" lid="hamiltonian-flow">generates a flow</a> $\phi^H_t\colon\mathcal{X}\to\mathcal{X}$ such that
+\[\pi(x)=\pi(\phi^H_t(x)).\]
+Then $H$ is preserved along the parallel transport.
+\end{Lemma}
+\begin{Remark}
+Despite talking about Hamiltonian flows on $\mathcal{X}$, we are not assuming that $\Omega$ is symplectic, only that $\phi^H_t$ is generated by a vector field $v_H$ satisfying $\iota_{v_H}\Omega=-dH$.
+\end{Remark}
+\begin{proof}
+Let $\gamma\colon[0,1]\to S$ be a path and let $\widetilde{\dot{\gamma}}(t)$ be the horizontal vector field along $\pi^{-1}(\gamma([0,1]))$ projecting to $\dot{\gamma}(t)$. Let $v_H$ be the Hamiltonian vector field associated to $H$, so $\iota_{v_H}\Omega=-dH$. Differentiating $\pi(\phi^H_t(x))=\pi(x)$ with respect to $t$, we get $\pi_*v_H=0$, so $v_H$ is tangent to the fibres of $\pi$. We compute:
+\[\mathcal{L}_{\widetilde{\dot{\gamma}}(t)}H=\iota_{\widetilde{\dot{\gamma}}(t)}dH=-\Omega\left(v_H,\widetilde{\dot{\gamma}}(t)\right)=0\]
+because $v_H$ is tangent to the fibres of $\pi$ and $\widetilde{\dot{\gamma}}(t)$ is horizontal for the symplectic connection, and hence $\Omega$-orthogonal to the fibres of $\pi$.
+\end{proof}
+
+\section{Fibred Lagrangian submanifolds}
+
+\begin{Lemma}[lmafibred]
+Let $\left(\mathcal{X}\stackrel{\pi}{\to} S,\Omega\right)$ be a symplectic fibre bundle. Suppose that $S$ is two-dimensional and let $\gamma\colon[0,1]\to S$ be an embedded path. Let $L\subset\pi^{-1}(\gamma([0,1]))$ be a submanifold such that $\pi|_L\colon L\to\gamma([0,1])$ is a fibre bundle whose fibre is $\Lambda_t=L\cap X_{\gamma(t)}$. Suppose that $\Lambda_0\subset X_{\gamma(0)}$ is a Lagrangian submanifold. Then $L$ is Lagrangian if and only if $L$ is traced out by $\Lambda_0$ under parallel transport along $\gamma$.
+\end{Lemma}
+\begin{proof}
+If $L$ is traced out by $\Lambda_0$ under parallel transport along $\gamma$ then the tangent space to $L$ at any point is the tangent space to $\Lambda_t$ plus the horizontal lift of $\dot{\gamma}$. Horizontal vectors pair to zero with vertical vectors under $\Omega$ and $\Omega$ vanishes on $\Lambda_t$ (as parallel transport is symplectic and $L_t$ is the image of a Lagrangian under symplectic parallel transport), hence $\Omega$ vanishes on $L$.
+
+Conversely, suppose that $L$ is Lagrangian and let $U$ be a vector field tangent to $L$ but complementary to $T\Lambda_t$. We have that $\Omega(U,W)=0$ for any $W\in T\Lambda_t$ as $L$ is Lagrangian. Let $e_1,\ldots,e_n$ be a basis for $T\Lambda_t$ and $f_1,\ldots,f_n$ be such that $\omega(e_i,f_j)=\delta_{ij}$, $\omega(e_i,e_j)=\omega(f_i,f_j)=0$. Let $V$ be the horizontal lift of $\dot{\gamma}$. Suppose that $U=\sum a_ie_i+\sum b_if_i+cV$. We have
+\[\omega(U,e_i)=b_i=0\]
+and we see that $U-\sum a_ie_i=cV$ is still tangent to $L$. Since $U$ is complementary to $T\Lambda_t$, $c\neq 0$. Therefore $V$ is tangent to $L$. This proves that $L$ is invariant under parallel transport.
+\end{proof}
+
+\end{document}

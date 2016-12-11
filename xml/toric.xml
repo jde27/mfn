@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+
+<card title="Projective toric varieties" created="2016-12-11" date="2016-12-11" type="tex">
+<metadata>
+<authors>
+<author name="Jonny Evans" email="j.d.evans@ucl.ac.uk"/>
+</authors>
+<links>
+</links>
+<tags>
+</tags>
+</metadata>
+<bod>
+<section num="1" name="Construction">
+
+<p>
+Let $P$ be a compact convex polytope in $\RR^n$ whose vertices have integer coordinates. For each integer lattice point $\underline{m}=(m_1,\ldots,m_n)\in P\cap\ZZ^n$ we associate the Laurent monomial $\underline{x}^{\underline{m}}=x_1^{m_1}\cdots x_n^{m_n}$. Let us list the elements $\underline{m}^0,\ldots,\underline{m}^N$ in $P\cap\ZZ^n$. Consider the map
+\[F_P\colon(\CC^*)^n\to\cp{N}\]
+defined by
+\[F_P(\underline{x})=[\underline{x}^{\underline{m}^0}:\ldots:\underline{x}^{\underline{m}^N}].\]
+The <i> projective toric variety $X_P$ associated to $P$</i> is the Zariski closure of the image of $F$.
+</p>
+
+<env type="Example" id="section1item1" sectionnum="1" itemnum="1">
+<p>
+Let $P$ be the square (convex hull of $\underline{m}^0=(0,0)$, $\underline{m}^1=(1,0)$, $\underline{m}^2=(0,1)$, $\underline{m}^3=(1,1)$). The map $F_P$ is
+\[F_P(x,y)=[1:x:y:xy].\]
+Points $[A:B:C:D]$ in the image of $F_P$ satisfy the equation $AD=BC$, so points in $X_P$ also satisfy this equation. This tells us that $X_P$ is precisely the quadric surface $\{[A:B:C:D]\ :\ AD=BC\}\subset\cp{3}$.
+</p>
+</env>
+
+<p>
+Consider the set of points $[e^{i\theta_0}:\cdots:e^{i\theta_N}]\in\cp{N}$. This is a copy of $T^N$. Restricting $F_P$ to the torus $T^n=\{(e^{i\theta_1},\ldots,e^{i\theta_n})\}\subset(\CC^*)^n$, we get a homomorphism
+\[T^n\to T^N.\]
+This induces a linear pushforward map on Lie algebras $f_P:=(F_P)_*\colon\RR^n\to\RR^N$. The dual of $f_P$ is a projection map
+\[f_P^*\colon\RR^N\to\RR^n.\]
+</p>
+
+<env type="Theorem" id="section1item2" sectionnum="1" itemnum="2">
+<p>
+If $\mu\colon\cp{N}\to\RR^N$ is the standard moment map
+\[\mu([z_0:\ldots:z_N])=\left(\frac{|z_1|^2}{|\underline{z}|^2},\ldots,\frac{|z_N|^2}{|\underline{z}|^2}\right)\]
+for the action of $T^N$ then $f_P^*\circ\mu\colon X_P\to\RR^n$ is a moment map for the action of $T^n$ on $X_P$.
+</p>
+</env>
+
+
+</section></bod>
+</card>

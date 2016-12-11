@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+
+<card title="Graded Lagrangian graphs" created="2016-03-09" date="2016-12-11" type="tex">
+<metadata>
+<authors>
+<author name="Jonny Evans" email="j.d.evans@ucl.ac.uk"/>
+</authors>
+<links>
+<link href="lagrangian-phase.xml"/>
+<link href="lagrangian-submanifold.xml"/>
+<link href="calabi-yau.xml"/>
+<link href="special-lagrangian.xml"/>
+<link href="lagrangian-grassmannian.xml"/>
+<link href="maslov-class.xml"/>
+</links>
+<tags>
+<tag name="Lagrangians"/>
+</tags>
+</metadata>
+<bod>
+<section num="1" name="An extended example">
+
+<p>
+Suppose that $(L_0,\tilde{\theta}_0)$ is a <a link="lagrangian-phase.xml" lid="gradedlagrangian">graded Lagrangian submanifold</a> in some symplectic manifold with a choice of complex volume form $\Omega$. Remember a grading is a choice of real-valued function $\tilde{\theta}\colon L\to\in\RR$ such that the <a link="lagrangian-phase.xml" lid="phasedfn">phase function</a> at each point is $e^{i\theta}\in\CC^{\times}/\RR^{\times}$. By passing to a <a link="lagrangian-submanifold.xml" lid="weinsteinnbhd">Weinstein neighbourhood</a> of $L_0$ we will assume that the ambient manifold $X$ is $T^*L_0$.
+</p>
+
+<p>
+Let $L_t$ be the graph of $t dF$ for some Morse function $F$. As $t$ starts increasing, there's a unique way of lifting the path of Lagrangians to a path of graded Lagrangians $(L_t,\tilde{\theta}_t)$. To see this, for each point $(x,td_xF)\in L_t$, translate the tangent space $T_{(x,td_xF)}L_t$ down to $(x,0)$ and we get a path in the <a link="lagrangian-grassmannian.xml">Lagrangian Grassmannian</a> $\Lambda(n)$ at $(x,0)$; we just want to lift this path to a path in the universal cover $\widetilde{\Lambda(n)}$ starting at the chosen basepoint $(T_xL_0,\tilde{\theta}_0(x))$.
+</p>
+
+<env type="Lemma" id="section1item1" sectionnum="1" itemnum="1">
+<p>
+If $p\in L_0$ is a critical point of $F$ then $p\in L_0\cap L_t$ for all $t$ and the <a link="floer-index.xml">Floer index</a> of this intersection point equals the Morse index of the critical point.
+</p>
+</env>
+<proof vis="off" id="prf1item1">
+<p>
+By definition, critical points of $F$ are where $dF=0$, and hence give intersection points between $L_0$ and $L_t=\mathrm{graph}(tdF)$. By the Morse lemma, we can work in local coordinates near $p$ so that $L_0 = \RR^n\oplus\{0\}$ in $\RR^{2n}$ and $F=\frac{1}{2}(a_1x_1^2+...+a_nx_n^2)$ is a Morse function (say $a_i=\pm 1$).
+</p>
+
+<p>
+In these coordinates, $L_t = \mathrm{graph}(ta_1x_1dx_1+ta_2x_2dx_2+...ta_nx_ndx_n)$ so in the $k$th factor $\RR\oplus i\RR$ it is a line with slope $a_k$, that is $L_t=e^{ib_1(t)}\RR\oplus\cdots\oplus e^{ib_n(t)}\RR$ where $\tan(b_k(t))=ta_k$. Therefore $(L_t,\tilde{\theta}_0(p)\sum b_k(t))$ is the desired path of graded Lagrangian planes and $b_k(t)$ is a continuous path of angles satisfying $\tan(b_k(t))=ta_k$ starting at $b_k(0)=0$. This path of angles stays in the region $(-\pi/2,\pi/2)$ because it's a continuous path and $\tan$ jumps at $\pm \pi/2$.
+</p>
+
+<p>
+To define the grading of the intersection point (i.e. the critical point of $F$ at the origin), you instead write $L_t$ as $e^{ic_1(t)}\RR\oplus\cdots\oplus e^{ic_n(t)}\RR$ with $c_k(t)\in(0,\pi)$. Therefore if $b_k(t)&#038;lt; 0$ we have to add $\pi$ to it to turn it into $c_k(t)$. We have $b_k(t)&#038;lt; 0$ if and only if $a_k&#038;lt; 0$, if and only if this is a negative eigendirection of the Hessian of $F$.
+</p>
+
+<p>
+In other words, if we define the index $\mu$ of the intersection point by $\theta_t - \theta_0 = \sum c_k + \pi\mu$ then we get $\mu=\#\{ k : b_k(t)&#038;lt; 0\mbox{ for }t\neq 0\}$ which equals the Morse index.
+</p>
+</proof>
+
+<env type="Example" id="section1item2" sectionnum="1" itemnum="2">
+<p>
+Consider $T^*S^1$ as $\CC/\ZZ$ (where $\ZZ$ acts by translation by multiples of $2\pi$ in the $x$-direction) and take the holomorphic volume form $dz$. The zero-section is special Lagrangian with phase zero. Let $F$ be the Morse function $\sin x$ on the circle and you see (using the above arguments) that there is one intersection point of index 1 and one of index 0. You can see that $\mathrm{graph}(dF)$ is not special Lagrangian: the special Lagrangians of slope $\phi$ here are just straight lines in $\CC$ with slope $\phi$; the slope of $\mathrm{graph}(dF)$ varies between $0$ and $1$. However, it is canonically graded and you can write its phase function explicitly as $\tan^{-1}(\cos x)$.
+</p>
+</env>
+</section></bod>
+</card>

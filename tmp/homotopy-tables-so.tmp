@@ -1,0 +1,58 @@
+This is a temporary file.
+\documentclass{amsart}
+
+\title{Homotopy groups of $SO(n)$}
+\author{Jonny Evans}
+\email{j.d.evans@ucl.ac.uk}
+
+%@classifying-spaces.xml
+
+%#TopologyOfLieGroups
+
+\begin{document}
+
+\section{Stable range}
+
+The homotopy long exact sequence of the fibration $SO(n)\to SO(n+1)\to S^n$ gives
+\[0=\pi_{n-1}(S^n)\to\pi_{n-2}(SO(n))\to\pi_{n-2}(SO(n+1))\to \pi_{n-2}(S^n)=0\]
+so if $k\leq n-2$ then $\pi_k(SO(n))\cong \pi_k(SO(N))$ for all $N\geq n$. Equivalently, if we define $SO=\lim SO(n)$ then
+\[\begin{align}\pi_k(SO(n))&#038;amp; = \pi_k(SO)\mbox{ for }k \leq n-2\\
+&#038;amp; = \pi_k(O)\mbox{ if }1 \leq k
+\end{align}\]
+We call this the {\bf stable range}.
+
+Bott periodicity implies that the homotopy groups are 8-periodic in the stable range, and are given by:
+
+      <table>
+	<tr><th>$k \mod 8$</th> <th>$\pi_k(O)$  </th></tr>
+	<tr><td>0        </td> <td>$\Z{2}$      </td></tr>
+	<tr><td>1        </td> <td>$\Z{2}$      </td></tr>
+	<tr><td>2        </td> <td>0            </td></tr>
+	<tr><td>3        </td> <td>$\ZZ$        </td></tr>
+	<tr><td>4        </td> <td>0            </td></tr>
+	<tr><td>5        </td> <td>0            </td></tr>
+	<tr><td>6        </td> <td>0            </td></tr>
+	<tr><td>7        </td> <td>$\ZZ$        </td></tr>
+      </table>
+
+\section{Unstable range}
+
+Beyond the stable range, Kervaire [Ker] made the following calculations ($n\geq 8$)
+
+<table>
+	<tr><th>$n\mod 8$         </th> <th>$0$                 </th> <th>$1$             </th> <th>$2$             </th> <th>$3$             </th> <th>$4$                 </th> <th>$5$             </th> <th>$6$                </th> <th>$7$             </th></tr>
+<tr><td>$\pi_{n-1}(SO(n))$</td> <td>$\ZZ^2$             </td> <td>$\Z{2}^2$       </td> <td>$\ZZ\oplus\Z{2}$</td> <td>$\Z{2}$         </td> <td>$\ZZ^2$             </td> <td>$\Z{2}$         </td> <td>$\ZZ$              </td> <td>$\Z{2}$         </td></tr>
+<tr><td>$\pi_{n}(SO(n))$  </td> <td>$\Z{2}^3$           </td> <td>$\Z{2}^2$       </td> <td>$\Z{4}$         </td> <td>$\ZZ$           </td> <td>$\Z{2}^2$           </td> <td>$\Z{2}$         </td> <td>$\Z{4}$            </td> <td>$\ZZ$           </td></tr>
+<tr><td>$\pi_{n+1}(SO(n))$</td> <td>$\Z{2}^3$           </td> <td>$\Z{8}$         </td> <td>$\ZZ$           </td> <td>$\Z{2}$         </td> <td>$\Z{2}^2$           </td> <td>$\Z{8}$         </td> <td>$\ZZ$              </td> <td>$\Z{2}^2$       </td></tr>
+<tr><td>$\pi_{n+2}(SO(n))$</td> <td>$\Z{24}\oplus\Z{8}$ </td> <td>$\ZZ\oplus\Z{2}$</td> <td>$\Z{12}$        </td> <td>$\Z{2}^2$       </td> <td>$\Z{4}\oplus\Z{24d}$</td> <td>$\ZZ\oplus\Z{2}$</td> <td>$\Z{12}\oplus\Z{2}$</td> <td>$\Z{2}^2$       </td></tr>
+<tr><td>$\pi_{n+3}(SO(n))$</td> <td>$\ZZ\oplus\Z{2}$    </td> <td>$0$             </td> <td>$\Z{2}$         </td> <td>$\Z{8}$         </td> <td>$\ZZ\oplus\Z{2}$    </td> <td>$\Z{2}$         </td> <td>$\Z{2}$            </td> <td>$\Z{8}$         </td></tr>
+<tr><td>$\pi_{n+4}(SO(n))$</td> <td>$0$                 </td> <td>$\Z{2}$         </td> <td>$\Z{8d}$        </td> <td>$\ZZ\oplus\Z{2}$</td> <td>$\Z{2}$             </td> <td>$\Z{2}$         </td> <td>$\Z{8}$            </td> <td>$\ZZ\oplus\Z{2}$</td></tr>
+</table>
+
+where $d$ is either $1$ or $2$.
+
+\section{References}
+{\bf [Ker]} Kervaire, M. A. "Some nonstable homotopy groups of Lie groups" Illinois J. Math. 4 (1960) 161-169.
+
+
+\end{document}

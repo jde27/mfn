@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../auxil/mfno.xsl"?>
+<card title="Lagrangians" date="2016-12-11" type="tag">
+<!-- This page collects links to all field notes tagged Lagrangians -->
+<bod>
+<index>
+<item href="action-functional.xml">The action functional</item>
+<item href="chekanov-torus.xml">Chekanov torus</item>
+<item href="graded-lagrangian-graphs.xml">Graded Lagrangian graphs</item>
+<item href="lagrangian-phase.xml">Phase function for Lagrangians</item>
+<item href="lagrangian-submanifold.xml">Lagrangian submanifolds</item>
+<item href="maslov-class.xml">Maslov class</item>
+<item href="superpotential.xml">Superpotentials</item>
+</index>
+</bod>
+</card>

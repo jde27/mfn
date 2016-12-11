@@ -1,0 +1,10 @@
+This directory contains all of the compiler scripts for converting tex files into 
+XML.
+
+    ./scripts/texml.sh nameoffile       compiles tex into XML
+
+    ./scripts/rss.sh                    generates RSS feed
+
+    ./scripts/index.sh                  generates index page
+
+    ./scripts/tag.sh                    generates tag pages
